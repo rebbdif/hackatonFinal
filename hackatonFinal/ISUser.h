@@ -10,4 +10,8 @@
 
 @interface ISUser : NSObject
 
+@property(strong,nonatomic)NSString* login;
+@property(strong,nonatomic)NSString* pasword;
+
+
 @end

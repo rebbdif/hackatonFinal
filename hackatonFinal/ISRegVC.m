@@ -8,8 +8,12 @@
 
 #import "ISRegVC.h"
 #import "ISLoginVC.h"
+#import "ISUser.h"
 
 @interface ISRegVC ()
+
+@property(strong,nonatomic)NSString* login;
+@property(strong,nonatomic)NSString* pasword;
 
 
 @end
@@ -112,12 +116,15 @@
     
     
     if ([textField isEqual:self.mailTF]) {
-        NSString* mail=textField.text;
+        NSString* login=textField.text;
+        self.login=login;
+        
         [self.passwordTF becomeFirstResponder];
     } else
         if([textField isEqual:self.passwordTF])
         {
             NSString* password=textField.text;
+            self.pasword=password;
             [self.passwordL becomeFirstResponder];
         } else
         
@@ -157,8 +164,14 @@
     }
     
     NSString* massage=@"";
-    if (i==0) {
+    if ((i==0)&&([self.passwordL.text isEqualToString:self.passwordTF.text])) {
         massage=@"Вы успешно зарегистрированы";
+        
+        ISUser* user=[[ISUser alloc]init];
+        user.login=self.mailTF.text;
+        user.pasword=self.passwordTF.text;
+        
+        
     }else
         massage=@"Одно из полей не заполненно";
     
