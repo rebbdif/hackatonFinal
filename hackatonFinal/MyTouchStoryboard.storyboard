@@ -32,6 +32,14 @@
                                     <action selector="touchIDButton:" destination="6iX-Fd-op0" eventType="touchUpInside" id="pri-Gj-qnw"/>
                                 </connections>
                             </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="caW-RX-8LL">
+                                <rect key="frame" x="182" y="528" width="33" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="retry"/>
+                                <connections>
+                                    <action selector="retryButton:" destination="6iX-Fd-op0" eventType="touchUpInside" id="sf1-RM-oHN"/>
+                                </connections>
+                            </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="touch" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="wcn-iv-XDd">
                                 <rect key="frame" x="165" y="272" width="44" height="21"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
@@ -46,6 +54,9 @@
                             <constraint firstItem="eC9-8v-O2w" firstAttribute="centerX" secondItem="CBn-5Y-843" secondAttribute="centerX" id="qnu-Ba-bAI"/>
                         </constraints>
                     </view>
+                    <connections>
+                        <outlet property="touchIDOutlet" destination="eC9-8v-O2w" id="p2O-K2-ghM"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="yWT-YE-tf5" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
