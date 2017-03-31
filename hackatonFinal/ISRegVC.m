@@ -26,7 +26,7 @@
     }
     [self.regBut setBackgroundColor:[UIColor whiteColor]];
     self.infoButton.alpha=0;
-    UIColor* c=[UIColor colorWithRed:255.f/255.f green:94.f/255.f blue:86.f/255.f alpha:1];
+    UIColor* c=[UIColor colorWithRed:254.f/255.f green:82.f/255.f blue:184.f/255.f alpha:1];
     [self.registButton setTitleColor:c forState:UIControlStateNormal];
     
     
@@ -37,7 +37,7 @@
     [UIView animateWithDuration:0.1 delay:0 options:UIViewAnimationOptionCurveEaseOut animations:^{
         
         [self.regBut setTitleColor:[UIColor whiteColor] forState:UIControlStateNormal];
-        UIColor* c=[UIColor colorWithRed:255.f/255.f green:94.f/255.f blue:86.f/255.f alpha:1];
+        UIColor* c=[UIColor colorWithRed:254.f/255.f green:82.f/255.f blue:184.f/255.f alpha:1];
         [self.registButton setTitleColor:[UIColor whiteColor] forState:UIControlStateNormal];
         [self.regBut setBackgroundColor:c];
         
@@ -95,7 +95,7 @@
     
     [UIView animateWithDuration:0.3 delay:0 options:UIViewAnimationOptionCurveEaseInOut animations:^{
         
-        self.kayConst.constant=180.f;
+        self.kayConst.constant=200.f;
         [self.view layoutIfNeeded];
         
         
@@ -118,15 +118,12 @@
         if([textField isEqual:self.passwordTF])
         {
             NSString* password=textField.text;
-            [self.nameTF becomeFirstResponder];
+            [self.passwordL becomeFirstResponder];
         } else
-            if ([textField isEqual:self.nameTF]) {
-               NSString* name=textField.text;
-
-               [self.fNameTF becomeFirstResponder];
-            }else{
         
-                NSString* fName=textField.text;
+        {
+        
+            NSString* fName=textField.text;
         [UIView animateWithDuration:0.3 delay:0 options:UIViewAnimationOptionCurveEaseInOut animations:^{
             
             [textField resignFirstResponder];

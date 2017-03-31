@@ -13,8 +13,7 @@
 
 @property (weak, nonatomic) IBOutlet NSLayoutConstraint *kayConst;
 @property (weak, nonatomic) IBOutlet UITextField *mailTF;
-@property (weak, nonatomic) IBOutlet UITextField *nameTF;
-@property (weak, nonatomic) IBOutlet UITextField *fNameTF;
+@property (weak, nonatomic) IBOutlet UITextField *passwordL;
 @property (weak, nonatomic) IBOutlet UITextField *passwordTF;
 
 @property (strong, nonatomic) IBOutletCollection(UITextField) NSArray *anTextFs;
