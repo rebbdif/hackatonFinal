@@ -171,9 +171,7 @@ static const UInt8 kKeychainItemIdentifier[]    = "com.apple.dts.KeychainUI\0";
         
     }
     
-    NSString* massage=@"";
     if ((i==0)&&([self.passwordL.text isEqualToString:self.passwordTF.text])) {
-        massage=@"Вы успешно зарегистрированы";
         
         ISUser* user=[[ISUser alloc]init];
         user.login=self.mailTF.text;
@@ -189,6 +187,9 @@ static const UInt8 kKeychainItemIdentifier[]    = "com.apple.dts.KeychainUI\0";
         Keychain* chain=[[Keychain alloc]initWithService:SERVICE_NAME withGroup:nil];
         NSString *key =login;
         NSData * value = [hash dataUsingEncoding:NSUTF8StringEncoding];
+        NSData * data =[chain find:key];
+        if((data == nil)){
+        
         
         if([chain insert:key :value])
         {
@@ -207,16 +208,28 @@ static const UInt8 kKeychainItemIdentifier[]    = "com.apple.dts.KeychainUI\0";
             
             
         }];
+        }else{
+            
+            [self presentAlertWithTitle:@"Такой пользователь уже существует"];
+            
+        }
         
         
     }else
-        massage=@"Одно из полей не заполненно";
+        
+        [self presentAlertWithTitle:@"Одно из полей не заполненно"];
+    
+}
+
+
+-(void)presentAlertWithTitle:(NSString*)title{
+    
     
     
     
     UIAlertController * alert=   [UIAlertController
                                   alertControllerWithTitle:@""
-                                  message:massage
+                                  message:title
                                   preferredStyle:UIAlertControllerStyleAlert];
     
     UIAlertAction* ok = [UIAlertAction
@@ -229,10 +242,10 @@ static const UInt8 kKeychainItemIdentifier[]    = "com.apple.dts.KeychainUI\0";
                          }];
     
     [alert addAction:ok];
-    
-    
     [self presentViewController:alert animated:YES completion:nil];
     
     
 }
+
+
 @end

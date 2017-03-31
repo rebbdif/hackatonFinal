@@ -170,31 +170,7 @@
         if(data == nil)
         {
             NSLog(@"Keychain data not found");
-            
-            NSString* massage=@"Проверьте правильность ввода";
-            
-            
-            
-            UIAlertController * alert=   [UIAlertController
-                                          alertControllerWithTitle:@""
-                                          message:massage
-                                          preferredStyle:UIAlertControllerStyleAlert];
-            
-            UIAlertAction* ok = [UIAlertAction
-                                 actionWithTitle:@"OK"
-                                 style:UIAlertActionStyleDefault
-                                 handler:^(UIAlertAction * action)
-                                 {
-                                     [alert dismissViewControllerAnimated:YES completion:nil];
-                                     
-                                 }];
-            
-            [alert addAction:ok];
-            
-            [self presentViewController:alert animated:YES completion:nil];
-            
-            
-            
+            [self presentAlertWithTitle:@"Проверьте правильность ввода"];
             
          }
             else
@@ -221,29 +197,7 @@
                 
              }else{
                  
-                 
-                 NSString* massage=@"неверный Логин или PIN";
-                 
-                 
-                 
-                 UIAlertController * alert=   [UIAlertController
-                                               alertControllerWithTitle:@""
-                                               message:massage
-                                               preferredStyle:UIAlertControllerStyleAlert];
-                 
-                 UIAlertAction* ok = [UIAlertAction
-                                      actionWithTitle:@"OK"
-                                      style:UIAlertActionStyleDefault
-                                      handler:^(UIAlertAction * action)
-                                      {
-                                          [alert dismissViewControllerAnimated:YES completion:nil];
-                                          
-                                      }];
-                 
-                 [alert addAction:ok];
-                 
-                 [self presentViewController:alert animated:YES completion:nil];
-                 
+                 [self presentAlertWithTitle:@"неверный Логин или PIN"];
                  
                  
              }
@@ -255,35 +209,42 @@
         
         
     }else{
-        
-       NSString* massage=@"Одно из полей не заполненно";
-        
-        
-        
-        UIAlertController * alert=   [UIAlertController
-                                      alertControllerWithTitle:@""
-                                      message:massage
-                                      preferredStyle:UIAlertControllerStyleAlert];
-        
-        UIAlertAction* ok = [UIAlertAction
-                             actionWithTitle:@"OK"
-                             style:UIAlertActionStyleDefault
-                             handler:^(UIAlertAction * action)
-                             {
-                                 [alert dismissViewControllerAnimated:YES completion:nil];
-                                 
-                             }];
-        
-        [alert addAction:ok];
-        
-        [self presentViewController:alert animated:YES completion:nil];
-        
+    
+        [self presentAlertWithTitle:@"Одно из полей не заполненно"];
         
         
     }
     
     
 }
+
+
+
+-(void)presentAlertWithTitle:(NSString*)title{
+    
+    
+    
+    
+    UIAlertController * alert=   [UIAlertController
+                                  alertControllerWithTitle:@""
+                                  message:title
+                                  preferredStyle:UIAlertControllerStyleAlert];
+    
+    UIAlertAction* ok = [UIAlertAction
+                         actionWithTitle:@"OK"
+                         style:UIAlertActionStyleDefault
+                         handler:^(UIAlertAction * action)
+                         {
+                             [alert dismissViewControllerAnimated:YES completion:nil];
+                             
+                         }];
+    
+    [alert addAction:ok];
+    [self presentViewController:alert animated:YES completion:nil];
+    
+    
+}
+
 
 
 @end
