@@ -9,6 +9,11 @@
 #import "ISLoginVC.h"
 #import "ISRegVC.h"
 #import "MyTouchVC.h"
+#import "Sha256.h"
+#import "Keychain.h"
+
+#define SERVICE_NAME @"ANY_NAME_FOR_YOU"
+#define GROUP_NAME @"YOUR_APP_ID.com.apps.shared" //GROUP NAME should start with appl
 
 @interface ISLoginVC ()<UITextFieldDelegate>
 
@@ -151,12 +156,48 @@
     
     if (i==0) {
         
-        UITabBarController* vc=[self.storyboard instantiateViewControllerWithIdentifier:@"tab"];
-        vc.modalTransitionStyle=UIModalTransitionStyleFlipHorizontal;
+        NSString* login=self.login.text;
+        NSString* pasword=self.password.text;
+        NSString* token=[[[UIDevice currentDevice]identifierForVendor] UUIDString];
+        NSString* logPlTok=[NSString stringWithFormat:@"%@%@",pasword,token];
+        Sha256* sha=[[Sha256 alloc]init];
+        NSString* hash=[sha hmacSHA256:login data:logPlTok];
+        Keychain* chain=[[Keychain alloc]initWithService:SERVICE_NAME withGroup:nil];
+        NSString *key =login;
+        NSData * value = [hash dataUsingEncoding:NSUTF8StringEncoding];
         
-        [self presentViewController:vc animated:YES completion:^{
-            
-        }];
+        NSData * data =[chain find:key];
+        if(data == nil)
+        {
+            NSLog(@"Keychain data not found");
+         }
+            else
+         {
+             
+             NSString* bHash=[[NSString alloc] initWithData:data encoding:NSUTF8StringEncoding];
+          NSLog(@"Data is =%@",bHash);
+             
+             
+             if ([hash isEqualToString:bHash]) {
+                 
+               
+            UITabBarController* vc=[self.storyboard instantiateViewControllerWithIdentifier:@"tab"];
+            vc.modalTransitionStyle=UIModalTransitionStyleFlipHorizontal;
+            [self presentViewController:vc animated:YES completion:nil];
+                 
+                 
+                 
+                 
+                 
+                 
+                 
+             }
+             
+             
+             
+            }
+        
+        
         
     }else{
         
