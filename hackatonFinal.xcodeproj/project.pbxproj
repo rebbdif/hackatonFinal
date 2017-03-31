@@ -14,6 +14,9 @@
 		639C48FB1E8E4F010073E53D /* hackatonFinal.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 639C48F91E8E4F010073E53D /* hackatonFinal.xcdatamodeld */; };
 		639C48FD1E8E4F010073E53D /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 639C48FC1E8E4F010073E53D /* Assets.xcassets */; };
 		639C49001E8E4F010073E53D /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 639C48FE1E8E4F010073E53D /* LaunchScreen.storyboard */; };
+		639C49091E8E7F9C0073E53D /* MyTouchModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 639C49081E8E7F9C0073E53D /* MyTouchModel.m */; };
+		639C490C1E8E7FCF0073E53D /* MyTouchVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 639C490B1E8E7FCF0073E53D /* MyTouchVC.m */; };
+		639C490E1E8E7FEE0073E53D /* MyTouchStoryboard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 639C490D1E8E7FEE0073E53D /* MyTouchStoryboard.storyboard */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -28,6 +31,11 @@
 		639C48FC1E8E4F010073E53D /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		639C48FF1E8E4F010073E53D /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		639C49011E8E4F010073E53D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		639C49071E8E7F9C0073E53D /* MyTouchModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MyTouchModel.h; sourceTree = "<group>"; };
+		639C49081E8E7F9C0073E53D /* MyTouchModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MyTouchModel.m; sourceTree = "<group>"; };
+		639C490A1E8E7FCF0073E53D /* MyTouchVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MyTouchVC.h; sourceTree = "<group>"; };
+		639C490B1E8E7FCF0073E53D /* MyTouchVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MyTouchVC.m; sourceTree = "<group>"; };
+		639C490D1E8E7FEE0073E53D /* MyTouchStoryboard.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = MyTouchStoryboard.storyboard; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -70,6 +78,7 @@
 				639C49011E8E4F010073E53D /* Info.plist */,
 				639C48F91E8E4F010073E53D /* hackatonFinal.xcdatamodeld */,
 				639C48ED1E8E4F010073E53D /* Supporting Files */,
+				639C490F1E8E80110073E53D /* Touch */,
 			);
 			path = hackatonFinal;
 			sourceTree = "<group>";
@@ -80,6 +89,18 @@
 				639C48EE1E8E4F010073E53D /* main.m */,
 			);
 			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		639C490F1E8E80110073E53D /* Touch */ = {
+			isa = PBXGroup;
+			children = (
+				639C49071E8E7F9C0073E53D /* MyTouchModel.h */,
+				639C49081E8E7F9C0073E53D /* MyTouchModel.m */,
+				639C490A1E8E7FCF0073E53D /* MyTouchVC.h */,
+				639C490B1E8E7FCF0073E53D /* MyTouchVC.m */,
+				639C490D1E8E7FEE0073E53D /* MyTouchStoryboard.storyboard */,
+			);
+			name = Touch;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -142,6 +163,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				639C49001E8E4F010073E53D /* LaunchScreen.storyboard in Resources */,
+				639C490E1E8E7FEE0073E53D /* MyTouchStoryboard.storyboard in Resources */,
 				639C48FD1E8E4F010073E53D /* Assets.xcassets in Resources */,
 				639C48F81E8E4F010073E53D /* Main.storyboard in Resources */,
 			);
@@ -154,7 +176,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				639C49091E8E7F9C0073E53D /* MyTouchModel.m in Sources */,
 				639C48F51E8E4F010073E53D /* ViewController.m in Sources */,
+				639C490C1E8E7FCF0073E53D /* MyTouchVC.m in Sources */,
 				639C48FB1E8E4F010073E53D /* hackatonFinal.xcdatamodeld in Sources */,
 				639C48F21E8E4F010073E53D /* AppDelegate.m in Sources */,
 				639C48EF1E8E4F010073E53D /* main.m in Sources */,
