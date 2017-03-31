@@ -8,6 +8,7 @@
 
 #import "ISLoginVC.h"
 #import "ISRegVC.h"
+#import "MyTouchVC.h"
 
 @interface ISLoginVC ()<UITextFieldDelegate>
 
@@ -18,6 +19,15 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view.
+    
+    UIStoryboard* sb=[UIStoryboard storyboardWithName:@"MyTouchStoryboard" bundle:nil];
+   MyTouchVC* vc= [sb instantiateViewControllerWithIdentifier:@"touch"];
+    vc.modalTransitionStyle=UIModalTransitionStyleCoverVertical;
+    vc.modalPresentationStyle=UIModalPresentationFullScreen;
+    [self presentViewController:vc animated:YES completion:^{
+        
+    }];
+    
     
     
 }

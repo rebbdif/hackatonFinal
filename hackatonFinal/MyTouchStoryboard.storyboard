@@ -1,5 +1,5 @@
-<?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11762" systemVersion="15G1108" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="6iX-Fd-op0">
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11762" systemVersion="16D32" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="6iX-Fd-op0">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
@@ -12,7 +12,7 @@
         <!--My TouchVC-->
         <scene sceneID="6qF-K2-KiV">
             <objects>
-                <viewController id="6iX-Fd-op0" customClass="MyTouchVC" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="touch" id="6iX-Fd-op0" customClass="MyTouchVC" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="C6y-xo-8Xk"/>
                         <viewControllerLayoutGuide type="bottom" id="kXp-41-SS6"/>
@@ -22,7 +22,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="eC9-8v-O2w">
-                                <rect key="frame" x="154" y="301" width="67" height="66"/>
+                                <rect key="frame" x="154" y="300.5" width="67" height="66"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="67" id="9Tc-t3-bUh"/>
                                     <constraint firstAttribute="height" constant="66" id="JHQ-I5-Xma"/>
