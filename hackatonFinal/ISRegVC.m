@@ -9,6 +9,10 @@
 #import "ISRegVC.h"
 #import "ISLoginVC.h"
 #import "ISUser.h"
+#import "Sha256.h"
+#import <Security/Security.h>
+
+
 
 @interface ISRegVC ()
 
@@ -170,6 +174,13 @@
         ISUser* user=[[ISUser alloc]init];
         user.login=self.mailTF.text;
         user.pasword=self.passwordTF.text;
+        Sha256* sha=[[Sha256 alloc]init];
+        NSString* hash=[sha hmacSHA256:user.login data:user.pasword];
+        NSLog(@"%@",hash);
+        NSMutableDictionary* genericPasswordQuery = [[NSMutableDictionary alloc] init];
+       // [genericPasswordQuery setObject:<#(nonnull id)#> forKey:<#(nonnull id<NSCopying>)#>];
+        
+       // kSecClassGenericPassword
         
         
     }else
