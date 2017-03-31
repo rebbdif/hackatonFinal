@@ -19,6 +19,9 @@
 		639C490C1E8E7FCF0073E53D /* MyTouchVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 639C490B1E8E7FCF0073E53D /* MyTouchVC.m */; };
 		639C490E1E8E7FEE0073E53D /* MyTouchStoryboard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 639C490D1E8E7FEE0073E53D /* MyTouchStoryboard.storyboard */; };
 		639C49121E8E86410073E53D /* LocalAuthentication.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 639C49111E8E86410073E53D /* LocalAuthentication.framework */; };
+		F5920D5D1E8E977600CBD0FA /* MSCollectionVC.m in Sources */ = {isa = PBXBuildFile; fileRef = F5920D5C1E8E977600CBD0FA /* MSCollectionVC.m */; };
+		F5920D5F1E8E979300CBD0FA /* MSCollectionStoryboard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F5920D5E1E8E979300CBD0FA /* MSCollectionStoryboard.storyboard */; };
+		F5920D621E8EA05600CBD0FA /* MSCollectionLayout.m in Sources */ = {isa = PBXBuildFile; fileRef = F5920D611E8EA05600CBD0FA /* MSCollectionLayout.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -41,6 +44,11 @@
 		639C490B1E8E7FCF0073E53D /* MyTouchVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MyTouchVC.m; sourceTree = "<group>"; };
 		639C490D1E8E7FEE0073E53D /* MyTouchStoryboard.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = MyTouchStoryboard.storyboard; sourceTree = "<group>"; };
 		639C49111E8E86410073E53D /* LocalAuthentication.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = LocalAuthentication.framework; path = System/Library/Frameworks/LocalAuthentication.framework; sourceTree = SDKROOT; };
+		F5920D5B1E8E977600CBD0FA /* MSCollectionVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = MSCollectionVC.h; path = CollectionVC/MSCollectionVC.h; sourceTree = "<group>"; };
+		F5920D5C1E8E977600CBD0FA /* MSCollectionVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = MSCollectionVC.m; path = CollectionVC/MSCollectionVC.m; sourceTree = "<group>"; };
+		F5920D5E1E8E979300CBD0FA /* MSCollectionStoryboard.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; name = MSCollectionStoryboard.storyboard; path = CollectionVC/MSCollectionStoryboard.storyboard; sourceTree = "<group>"; };
+		F5920D601E8EA05600CBD0FA /* MSCollectionLayout.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = MSCollectionLayout.h; path = CollectionVC/MSCollectionLayout.h; sourceTree = "<group>"; };
+		F5920D611E8EA05600CBD0FA /* MSCollectionLayout.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = MSCollectionLayout.m; path = CollectionVC/MSCollectionLayout.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -149,6 +157,11 @@
 		F5920D5A1E8E95E200CBD0FA /* CollectionVC */ = {
 			isa = PBXGroup;
 			children = (
+				F5920D5B1E8E977600CBD0FA /* MSCollectionVC.h */,
+				F5920D5C1E8E977600CBD0FA /* MSCollectionVC.m */,
+				F5920D5E1E8E979300CBD0FA /* MSCollectionStoryboard.storyboard */,
+				F5920D601E8EA05600CBD0FA /* MSCollectionLayout.h */,
+				F5920D611E8EA05600CBD0FA /* MSCollectionLayout.m */,
 			);
 			name = CollectionVC;
 			sourceTree = "<group>";
@@ -212,6 +225,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F5920D5F1E8E979300CBD0FA /* MSCollectionStoryboard.storyboard in Resources */,
 				639C49001E8E4F010073E53D /* LaunchScreen.storyboard in Resources */,
 				639C490E1E8E7FEE0073E53D /* MyTouchStoryboard.storyboard in Resources */,
 				639C48FD1E8E4F010073E53D /* Assets.xcassets in Resources */,
@@ -226,6 +240,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F5920D621E8EA05600CBD0FA /* MSCollectionLayout.m in Sources */,
+				F5920D5D1E8E977600CBD0FA /* MSCollectionVC.m in Sources */,
 				639C49091E8E7F9C0073E53D /* MyTouchModel.m in Sources */,
 				18AD0CFD1E8E8ACC00F8C7A4 /* Sha256.m in Sources */,
 				639C48F51E8E4F010073E53D /* ViewController.m in Sources */,
