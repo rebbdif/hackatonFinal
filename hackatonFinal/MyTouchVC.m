@@ -11,6 +11,8 @@
 
 @interface MyTouchVC ()
 - (IBAction)touchIDButton:(id)sender;
+@property (weak, nonatomic) IBOutlet UIButton *touchIDOutlet;
+- (IBAction)retryButton:(id)sender;
 
 
 @end
@@ -19,25 +21,49 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    // Do any additional setup after loading the view.
+    if(  [self canYouUseTouchID]){
+        [self checkTouchID];
+    }
+    
+    
 }
 
-- (void)didReceiveMemoryWarning {
-    [super didReceiveMemoryWarning];
-    // Dispose of any resources that can be recreated.
+
+-(void) checkTouchID{
+    LAContext *context = [[LAContext alloc] init];
+    __block  NSString *message;
+    
+    // Show the authentication UI with our reason string.
+    [context evaluatePolicy:LAPolicyDeviceOwnerAuthenticationWithBiometrics localizedReason:@"Unlock access to locked feature" reply:^(BOOL success, NSError *authenticationError) {
+        if (success) {
+            message = @"TOUCHID: evaluatePolicy: succes";
+        }
+        else {
+            message = [NSString stringWithFormat:@"TOUCHID: evaluatePolicy: %@", authenticationError.localizedDescription];
+            
+            
+        }
+        
+        NSLog(@"%@",message);
+        if(!success){
+            UIAlertController* alert = [UIAlertController alertControllerWithTitle:@"You failed to authorize"
+                                                                           message:@"Try to swipe HOME button \n wash your hands \n improve your fingerpring in SETTINGS"
+                                                                    preferredStyle:UIAlertControllerStyleAlert];
+            
+            UIAlertAction* defaultAction = [UIAlertAction actionWithTitle:@"OK" style:UIAlertActionStyleDefault
+                                                                  handler:^(UIAlertAction * action) {}];
+            
+            [alert addAction:defaultAction];
+            [self presentViewController:alert animated:YES completion:nil];
+            
+        }
+    }];
+    
 }
 
-/*
-#pragma mark - Navigation
 
-// In a storyboard-based application, you will often want to do a little preparation before navigation
-- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
-    // Get the new view controller using [segue destinationViewController].
-    // Pass the selected object to the new view controller.
-}
-*/
-
-- (IBAction)touchIDButton:(id)sender {
+-(BOOL)canYouUseTouchID{
+    
     LAContext *context = [[LAContext alloc] init];
     __block  NSString *message;
     NSError *error;
@@ -47,14 +73,29 @@
     success = [context canEvaluatePolicy: LAPolicyDeviceOwnerAuthenticationWithBiometrics error:&error];
     if (success) {
         message = [NSString stringWithFormat:@"Touch ID is available"];
-        NSLog(@"%@",message);
+        NSLog(@"SUCCESS %@",message);
+        _touchIDOutlet.hidden=NO;
+        //здесь добавляем ввод второго пароля или что-то там
     }
     else {
         message = [NSString stringWithFormat:@"Touch ID is not available"];
-        NSLog(@"%@",message);
-
+        NSLog(@"FAILURE %@",message);
+        _touchIDOutlet.hidden=YES;
     }
+    return success;
     
+}
 
+
+
+- (IBAction)touchIDButton:(id)sender {
+    
+    
+}
+- (IBAction)retryButton:(id)sender {
+    
+    
+    [self checkTouchID];
+    
 }
 @end
