@@ -7,6 +7,7 @@
 //
 
 #import "ViewController.h"
+#import "Sha256.h"
 
 @interface ViewController ()
 
@@ -16,6 +17,8 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    Sha256 *new = [[Sha256 alloc] init];
+    [new hmacSHA256:@"1234" data:@"hello"];
     // Do any additional setup after loading the view, typically from a nib.
 }
 
