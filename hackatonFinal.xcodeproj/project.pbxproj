@@ -109,6 +109,8 @@
 			children = (
 				18ADE4311E8E96C300F983E5 /* LoginsModel.h */,
 				18ADE4321E8E96C300F983E5 /* LoginsModel.m */,
+				D3890ADB1E8EA4EC0038E7EB /* ISUser.h */,
+				D3890ADC1E8EA4EC0038E7EB /* ISUser.m */,
 			);
 			path = models;
 			sourceTree = "<group>";
@@ -139,7 +141,6 @@
 				639C48F01E8E4F010073E53D /* AppDelegate.h */,
 				D3890ADA1E8E97060038E7EB /* login */,
 				639C48F11E8E4F010073E53D /* AppDelegate.m */,
-				D3890ADE1E8EA50F0038E7EB /* models */,
 				639C48F31E8E4F010073E53D /* ViewController.h */,
 				639C48F41E8E4F010073E53D /* ViewController.m */,
 				639C48F61E8E4F010073E53D /* Main.storyboard */,
@@ -191,15 +192,6 @@
 				D3890AD71E8E96F70038E7EB /* ISRegVC.m */,
 			);
 			name = login;
-			sourceTree = "<group>";
-		};
-		D3890ADE1E8EA50F0038E7EB /* models */ = {
-			isa = PBXGroup;
-			children = (
-				D3890ADB1E8EA4EC0038E7EB /* ISUser.h */,
-				D3890ADC1E8EA4EC0038E7EB /* ISUser.m */,
-			);
-			path = models;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
