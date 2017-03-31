@@ -21,13 +21,23 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    if(  [self canYouUseTouchID]){
-        [self checkTouchID];
-    }
+ //   if(  [self canYouUseTouchID]){
+  //      [self checkTouchID];
+  //  }
     
     
 }
 
+-(void)viewDidAppear:(BOOL)animated{
+    
+    [super viewDidAppear:animated];
+    
+       if(  [self canYouUseTouchID]){
+          [self checkTouchID];
+      }
+    
+    
+}
 
 -(void) checkTouchID{
     LAContext *context = [[LAContext alloc] init];
@@ -37,6 +47,7 @@
     [context evaluatePolicy:LAPolicyDeviceOwnerAuthenticationWithBiometrics localizedReason:@"Unlock access to locked feature" reply:^(BOOL success, NSError *authenticationError) {
         if (success) {
             message = @"TOUCHID: evaluatePolicy: succes";
+            [self dismissViewControllerAnimated:YES completion:nil];
         }
         else {
             message = [NSString stringWithFormat:@"TOUCHID: evaluatePolicy: %@", authenticationError.localizedDescription];

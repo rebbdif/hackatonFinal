@@ -20,18 +20,25 @@
     [super viewDidLoad];
     // Do any additional setup after loading the view.
     
-    UIStoryboard* sb=[UIStoryboard storyboardWithName:@"MyTouchStoryboard" bundle:nil];
-   MyTouchVC* vc= [sb instantiateViewControllerWithIdentifier:@"touch"];
-    vc.modalTransitionStyle=UIModalTransitionStyleCoverVertical;
-    vc.modalPresentationStyle=UIModalPresentationFullScreen;
-    [self presentViewController:vc animated:YES completion:^{
-        
-    }];
-    
+   
     
     
 }
 
+-(void)viewDidAppear:(BOOL)animated{
+    static dispatch_once_t onceToken;
+    dispatch_once(&onceToken, ^{
+        UIStoryboard* sb=[UIStoryboard storyboardWithName:@"MyTouchStoryboard" bundle:nil];
+        MyTouchVC* vc= [sb instantiateViewControllerWithIdentifier:@"touch"];
+        vc.modalTransitionStyle=UIModalTransitionStyleCoverVertical;
+        vc.modalPresentationStyle=UIModalPresentationFullScreen;
+        [self presentViewController:vc animated:YES completion:^{
+            
+        }];
+
+    });
+   
+}
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
