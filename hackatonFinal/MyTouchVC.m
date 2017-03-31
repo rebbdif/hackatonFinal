@@ -47,15 +47,18 @@
         NSLog(@"%@",message);
         if(!success){
             UIAlertController* alert = [UIAlertController alertControllerWithTitle:@"You failed to authorize"
-                                                                           message:@"Try to swipe HOME button \n wash your hands \n improve your fingerpring in SETTINGS"
+                                                                           message:@"Try to swipe HOME button \n wash your hands \n improve your fingerpring in settings \n \n close the app and open it again"
                                                                     preferredStyle:UIAlertControllerStyleAlert];
             
-            UIAlertAction* defaultAction = [UIAlertAction actionWithTitle:@"OK" style:UIAlertActionStyleDefault
-                                                                  handler:^(UIAlertAction * action) {}];
-            
-            [alert addAction:defaultAction];
+         /*   UIAlertAction* defaultAction = [UIAlertAction actionWithTitle:@"OK" style:UIAlertActionStyleDefault
+                                                                  handler:^(UIAlertAction * action) {
+                                                                      [[UIApplication sharedApplication]
+                                                                       
+                                                                      
+                                                                  }];
+            */
+          //  [alert addAction:defaultAction];
             [self presentViewController:alert animated:YES completion:nil];
-            
         }
     }];
     
