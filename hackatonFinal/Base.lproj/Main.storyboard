@@ -46,6 +46,9 @@
                                 <rect key="frame" x="173" y="268" width="30" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" title="2"/>
+                                <connections>
+                                    <segue destination="eb2-kd-5CM" kind="show" id="xZ4-XY-0zg"/>
+                                </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="TLu-uf-cfm">
                                 <rect key="frame" x="67" y="446" width="212" height="30"/>
@@ -63,13 +66,14 @@
             </objects>
             <point key="canvasLocation" x="136.80000000000001" y="138.98050974512745"/>
         </scene>
-        <!--login-->
-        <scene sceneID="qbS-JC-A2r">
+
+        <scene sceneID="A9T-ed-MbQ">
             <objects>
-                <viewControllerPlaceholder storyboardName="login" id="4cd-Fv-vg0" sceneMemberID="viewController"/>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="Cgf-12-MfB" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <viewControllerPlaceholder storyboardName="WeAddImagesStoryboard" id="eb2-kd-5CM" sceneMemberID="viewController"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="L8w-Fi-LGc" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="668" y="-81"/>
+            <point key="canvasLocation" x="598" y="-30"/>
+
         </scene>
         <!--MyTouchStoryboard-->
         <scene sceneID="bow-1z-VfD">
