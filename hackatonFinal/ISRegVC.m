@@ -180,11 +180,14 @@ static const UInt8 kKeychainItemIdentifier[]    = "com.apple.dts.KeychainUI\0";
         user.pasword=self.passwordTF.text;
         Sha256* sha=[[Sha256 alloc]init];
         NSString* hash=[sha hmacSHA256:user.login data:user.pasword];
-        NSLog(@"%@",hash);
-        NSMutableDictionary* genericPasswordQuery = [[NSMutableDictionary alloc] init];
-        [genericPasswordQuery setObject:(id)kSecClassGenericPassword forKey:(id)kSecClass];
-        NSData *keychainItemID = [NSData dataWithBytes:kKeychainItemIdentifier
-                                                length:strlen((const char *)kKeychainItemIdentifier)];
+//        NSLog(@"%@",hash);
+//        NSMutableDictionary* genericPasswordQuery = [[NSMutableDictionary alloc] init];
+//        [genericPasswordQuery setObject:(id)kSecClassGenericPassword forKey:(id)kSecClass];
+//        NSData *keychainItemID = [NSData dataWithBytes:kKeychainItemIdentifier
+//                                                length:strlen((const char *)kKeychainItemIdentifier)];
+//        [genericPasswordQuery setObject:keychainItemID forKey:(__bridge id)kSecAttrGeneric];
+        
+        
         
         
         
