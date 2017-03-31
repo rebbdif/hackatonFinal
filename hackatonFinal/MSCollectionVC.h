@@ -9,6 +9,7 @@
 #import <UIKit/UIKit.h>
 
 @interface MSCollectionVC : UIViewController
+@property (weak, nonatomic) IBOutlet UISearchBar *photoSearchField;
 
 @property (weak, nonatomic) IBOutlet UICollectionView *collectionView;
 

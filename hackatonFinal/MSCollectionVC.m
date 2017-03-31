@@ -10,7 +10,7 @@
 #import "MSCollectionLayout.h"
 
 
-@interface MSCollectionVC () <UICollectionViewDelegate, UICollectionViewDataSource>
+@interface MSCollectionVC () <UICollectionViewDelegate, UICollectionViewDataSource ,UISearchBarDelegate>
 
 @end
 
@@ -57,9 +57,33 @@
     
 }
 
+#pragma mark - UISearchBarDelegate
 
+- (void)searchBarTextDidBeginEditing:(UISearchBar *)searchBar {
+    
+    
+    [ searchBar setShowsCancelButton:YES animated:YES];
+}
 
+- (void)searchBarCancelButtonClicked:(UISearchBar *)searchBar {
+    [searchBar resignFirstResponder];
+    [ searchBar setShowsCancelButton:NO animated:YES];
+    
+}
 
+- (void)searchBarTextDidEndEditing:(UISearchBar *)searchBar {
+    
+    NSLog(@"text is editing");
+    
+}
+
+- (void)searchBarSearchButtonClicked:(UISearchBar *)searchBar {
+    
+    [searchBar resignFirstResponder];
+    [ searchBar setShowsCancelButton:NO animated:YES];
+    
+    
+}
 
 
 
