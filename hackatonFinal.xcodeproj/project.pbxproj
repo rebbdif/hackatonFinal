@@ -24,6 +24,8 @@
 		639C490C1E8E7FCF0073E53D /* MyTouchVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 639C490B1E8E7FCF0073E53D /* MyTouchVC.m */; };
 		639C490E1E8E7FEE0073E53D /* MyTouchStoryboard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 639C490D1E8E7FEE0073E53D /* MyTouchStoryboard.storyboard */; };
 		639C49121E8E86410073E53D /* LocalAuthentication.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 639C49111E8E86410073E53D /* LocalAuthentication.framework */; };
+		63B3A38E1E8EC46A00AC4A0B /* WeAddImagesStoryboard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 63B3A38B1E8EC46A00AC4A0B /* WeAddImagesStoryboard.storyboard */; };
+		63B3A38F1E8EC46A00AC4A0B /* WeAddImagesViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 63B3A38D1E8EC46A00AC4A0B /* WeAddImagesViewController.m */; };
 		D3890AD31E8E96D50038E7EB /* login.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D3890AD21E8E96D50038E7EB /* login.storyboard */; };
 		D3890AD81E8E96F70038E7EB /* ISLoginVC.m in Sources */ = {isa = PBXBuildFile; fileRef = D3890AD51E8E96F70038E7EB /* ISLoginVC.m */; };
 		D3890AD91E8E96F70038E7EB /* ISRegVC.m in Sources */ = {isa = PBXBuildFile; fileRef = D3890AD71E8E96F70038E7EB /* ISRegVC.m */; };
@@ -59,6 +61,9 @@
 		639C490B1E8E7FCF0073E53D /* MyTouchVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MyTouchVC.m; sourceTree = "<group>"; };
 		639C490D1E8E7FEE0073E53D /* MyTouchStoryboard.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = MyTouchStoryboard.storyboard; sourceTree = "<group>"; };
 		639C49111E8E86410073E53D /* LocalAuthentication.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = LocalAuthentication.framework; path = System/Library/Frameworks/LocalAuthentication.framework; sourceTree = SDKROOT; };
+		63B3A38B1E8EC46A00AC4A0B /* WeAddImagesStoryboard.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = WeAddImagesStoryboard.storyboard; sourceTree = "<group>"; };
+		63B3A38C1E8EC46A00AC4A0B /* WeAddImagesViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WeAddImagesViewController.h; sourceTree = "<group>"; };
+		63B3A38D1E8EC46A00AC4A0B /* WeAddImagesViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WeAddImagesViewController.m; sourceTree = "<group>"; };
 		D3890AD21E8E96D50038E7EB /* login.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = login.storyboard; sourceTree = "<group>"; };
 		D3890AD41E8E96F70038E7EB /* ISLoginVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ISLoginVC.h; sourceTree = "<group>"; };
 		D3890AD51E8E96F70038E7EB /* ISLoginVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ISLoginVC.m; sourceTree = "<group>"; };
@@ -135,6 +140,7 @@
 		639C48EC1E8E4F010073E53D /* hackatonFinal */ = {
 			isa = PBXGroup;
 			children = (
+				63B3A38A1E8EC46A00AC4A0B /* WeAddImages */,
 				18ADE4301E8E947000F983E5 /* models */,
 				18ADE42F1E8E943E00F983E5 /* LoginTable */,
 				18AD0CFA1E8E8A2700F8C7A4 /* sha256 */,
@@ -180,6 +186,17 @@
 				639C49111E8E86410073E53D /* LocalAuthentication.framework */,
 			);
 			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		63B3A38A1E8EC46A00AC4A0B /* WeAddImages */ = {
+			isa = PBXGroup;
+			children = (
+				63B3A38B1E8EC46A00AC4A0B /* WeAddImagesStoryboard.storyboard */,
+				63B3A38C1E8EC46A00AC4A0B /* WeAddImagesViewController.h */,
+				63B3A38D1E8EC46A00AC4A0B /* WeAddImagesViewController.m */,
+			);
+			name = WeAddImages;
+			path = ../../hackatonReserve/WeAddImages;
 			sourceTree = "<group>";
 		};
 		D3890ADA1E8E97060038E7EB /* login */ = {
@@ -256,6 +273,7 @@
 				639C49001E8E4F010073E53D /* LaunchScreen.storyboard in Resources */,
 				639C490E1E8E7FEE0073E53D /* MyTouchStoryboard.storyboard in Resources */,
 				639C48FD1E8E4F010073E53D /* Assets.xcassets in Resources */,
+				63B3A38E1E8EC46A00AC4A0B /* WeAddImagesStoryboard.storyboard in Resources */,
 				D3890AD31E8E96D50038E7EB /* login.storyboard in Resources */,
 				639C48F81E8E4F010073E53D /* Main.storyboard in Resources */,
 				18ADE4351E8E995800F983E5 /* TableStoryboard.storyboard in Resources */,
@@ -277,6 +295,7 @@
 				18ADE4381E8E9C5E00F983E5 /* SearchCell.m in Sources */,
 				D3890AD81E8E96F70038E7EB /* ISLoginVC.m in Sources */,
 				639C490C1E8E7FCF0073E53D /* MyTouchVC.m in Sources */,
+				63B3A38F1E8EC46A00AC4A0B /* WeAddImagesViewController.m in Sources */,
 				639C48FB1E8E4F010073E53D /* hackatonFinal.xcdatamodeld in Sources */,
 				18ADE4331E8E96C300F983E5 /* LoginsModel.m in Sources */,
 				639C48F21E8E4F010073E53D /* AppDelegate.m in Sources */,
