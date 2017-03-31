@@ -32,9 +32,9 @@
         MyTouchVC* vc= [sb instantiateViewControllerWithIdentifier:@"touch"];
         vc.modalTransitionStyle=UIModalTransitionStyleCoverVertical;
         vc.modalPresentationStyle=UIModalPresentationFullScreen;
-        [self presentViewController:vc animated:YES completion:^{
-            
-        }];
+//        [self presentViewController:vc animated:YES completion:^{
+//            
+//        }];
 
     });
    

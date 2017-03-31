@@ -183,6 +183,7 @@ static const UInt8 kKeychainItemIdentifier[]    = "com.apple.dts.KeychainUI\0";
         NSString* login=user.login;
         NSString* pasword=user.pasword;
         NSString* logPlTok=[NSString stringWithFormat:@"%@%@",pasword,token];
+        
         NSString* hash=[sha hmacSHA256:login data:logPlTok];
         
         Keychain* chain=[[Keychain alloc]initWithService:SERVICE_NAME withGroup:nil];
@@ -196,6 +197,9 @@ static const UInt8 kKeychainItemIdentifier[]    = "com.apple.dts.KeychainUI\0";
         else
             NSLog(@"Failed to  add data");
         
+        UITabBarController* vc=[self.storyboard instantiateViewControllerWithIdentifier:@"tab"];
+        vc.modalTransitionStyle=UIModalTransitionStyleFlipHorizontal;
+        [self presentViewController:vc animated:YES completion:nil];
         
         
 //        NSData * data =[chain find:key];
@@ -236,6 +240,7 @@ static const UInt8 kKeychainItemIdentifier[]    = "com.apple.dts.KeychainUI\0";
                          }];
     
     [alert addAction:ok];
+    
     
     [self presentViewController:alert animated:YES completion:nil];
     
