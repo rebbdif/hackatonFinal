@@ -7,8 +7,11 @@
 //
 
 #import "MyTouchVC.h"
+@import LocalAuthentication;
 
 @interface MyTouchVC ()
+- (IBAction)touchIDButton:(id)sender;
+
 
 @end
 
@@ -34,4 +37,24 @@
 }
 */
 
+- (IBAction)touchIDButton:(id)sender {
+    LAContext *context = [[LAContext alloc] init];
+    __block  NSString *message;
+    NSError *error;
+    BOOL success;
+    
+    // test if we can evaluate the policy, this test will tell us if Touch ID is available and enrolled
+    success = [context canEvaluatePolicy: LAPolicyDeviceOwnerAuthenticationWithBiometrics error:&error];
+    if (success) {
+        message = [NSString stringWithFormat:@"Touch ID is available"];
+        NSLog(@"%@",message);
+    }
+    else {
+        message = [NSString stringWithFormat:@"Touch ID is not available"];
+        NSLog(@"%@",message);
+
+    }
+    
+
+}
 @end

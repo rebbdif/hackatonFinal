@@ -9,10 +9,10 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--View Controller-->
+        <!--My TouchVC-->
         <scene sceneID="6qF-K2-KiV">
             <objects>
-                <viewController id="6iX-Fd-op0" sceneMemberID="viewController">
+                <viewController id="6iX-Fd-op0" customClass="MyTouchVC" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="C6y-xo-8Xk"/>
                         <viewControllerLayoutGuide type="bottom" id="kXp-41-SS6"/>
@@ -21,8 +21,19 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="eC9-8v-O2w">
+                                <rect key="frame" x="154" y="301" width="67" height="66"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="67" id="9Tc-t3-bUh"/>
+                                    <constraint firstAttribute="height" constant="66" id="JHQ-I5-Xma"/>
+                                </constraints>
+                                <state key="normal" image="Touch-icon-lg"/>
+                                <connections>
+                                    <action selector="touchIDButton:" destination="6iX-Fd-op0" eventType="touchUpInside" id="pri-Gj-qnw"/>
+                                </connections>
+                            </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="touch" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="wcn-iv-XDd">
-                                <rect key="frame" x="166" y="285" width="44" height="21"/>
+                                <rect key="frame" x="165" y="272" width="44" height="21"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="textColor"/>
@@ -30,6 +41,10 @@
                             </label>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="eC9-8v-O2w" firstAttribute="centerY" secondItem="CBn-5Y-843" secondAttribute="centerY" id="OAe-mO-PGi"/>
+                            <constraint firstItem="eC9-8v-O2w" firstAttribute="centerX" secondItem="CBn-5Y-843" secondAttribute="centerX" id="qnu-Ba-bAI"/>
+                        </constraints>
                     </view>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="yWT-YE-tf5" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -37,4 +52,7 @@
             <point key="canvasLocation" x="-4766" y="1349"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="Touch-icon-lg" width="138" height="137"/>
+    </resources>
 </document>

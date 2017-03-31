@@ -17,6 +17,7 @@
 		639C49091E8E7F9C0073E53D /* MyTouchModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 639C49081E8E7F9C0073E53D /* MyTouchModel.m */; };
 		639C490C1E8E7FCF0073E53D /* MyTouchVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 639C490B1E8E7FCF0073E53D /* MyTouchVC.m */; };
 		639C490E1E8E7FEE0073E53D /* MyTouchStoryboard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 639C490D1E8E7FEE0073E53D /* MyTouchStoryboard.storyboard */; };
+		639C49121E8E86410073E53D /* LocalAuthentication.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 639C49111E8E86410073E53D /* LocalAuthentication.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -36,6 +37,7 @@
 		639C490A1E8E7FCF0073E53D /* MyTouchVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MyTouchVC.h; sourceTree = "<group>"; };
 		639C490B1E8E7FCF0073E53D /* MyTouchVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MyTouchVC.m; sourceTree = "<group>"; };
 		639C490D1E8E7FEE0073E53D /* MyTouchStoryboard.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = MyTouchStoryboard.storyboard; sourceTree = "<group>"; };
+		639C49111E8E86410073E53D /* LocalAuthentication.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = LocalAuthentication.framework; path = System/Library/Frameworks/LocalAuthentication.framework; sourceTree = SDKROOT; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -43,6 +45,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				639C49121E8E86410073E53D /* LocalAuthentication.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -54,6 +57,7 @@
 			children = (
 				639C48EC1E8E4F010073E53D /* hackatonFinal */,
 				639C48EB1E8E4F010073E53D /* Products */,
+				639C49101E8E86410073E53D /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -101,6 +105,14 @@
 				639C490D1E8E7FEE0073E53D /* MyTouchStoryboard.storyboard */,
 			);
 			name = Touch;
+			sourceTree = "<group>";
+		};
+		639C49101E8E86410073E53D /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				639C49111E8E86410073E53D /* LocalAuthentication.framework */,
+			);
+			name = Frameworks;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
