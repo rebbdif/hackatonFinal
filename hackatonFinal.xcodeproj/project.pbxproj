@@ -65,6 +65,20 @@
 			path = Sha256;
 			sourceTree = "<group>";
 		};
+		18ADE42F1E8E943E00F983E5 /* LoginTable */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = LoginTable;
+			sourceTree = "<group>";
+		};
+		18ADE4301E8E947000F983E5 /* models */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = models;
+			sourceTree = "<group>";
+		};
 		639C48E11E8E4F000073E53D = {
 			isa = PBXGroup;
 			children = (
@@ -85,6 +99,8 @@
 		639C48EC1E8E4F010073E53D /* hackatonFinal */ = {
 			isa = PBXGroup;
 			children = (
+				18ADE4301E8E947000F983E5 /* models */,
+				18ADE42F1E8E943E00F983E5 /* LoginTable */,
 				18AD0CFA1E8E8A2700F8C7A4 /* sha256 */,
 				639C48F01E8E4F010073E53D /* AppDelegate.h */,
 				639C48F11E8E4F010073E53D /* AppDelegate.m */,
