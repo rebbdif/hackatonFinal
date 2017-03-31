@@ -9,6 +9,10 @@
 #import "LoginController.h"
 #import "LoginCell.h"
 #import "LoginsModel.h"
+#import "Keychain.h"
+
+#define GROUP_NAME @"YOUR_APP_ID.com.apps.shared"
+#define SERVICE_NAME @"ANY_NAME_FOR_YOU"
 
 @interface LoginController () <UITableViewDelegate, UITableViewDataSource>
 {
@@ -58,14 +62,22 @@
         [_modelArray removeAllObjects];
     }
     _modelArray = [[NSMutableArray alloc] init];
-    for (int i = 0; i<10; i++) {
         
         //TODO
-        NSString *service = [NSString stringWithFormat:@"Service%d",i];
-        NSString *login = [NSString stringWithFormat:@"Login%d",i];
-        LoginsModel *model = [[LoginsModel alloc]initWithLogin:service login:login];
-        [_modelArray addObject:model];
-    }
+        Keychain *keyChain = [[Keychain alloc] initWithService:SERVICE_NAME withGroup:nil];
+        NSString* token=[[[UIDevice currentDevice]identifierForVendor] UUIDString];
+        NSUserDefaults *userDeafults = [NSUserDefaults standardUserDefaults];
+        NSString *login = [userDeafults objectForKey:@"login"];
+        NSInteger idz = [userDeafults objectForKey:@"idz"];
+        for (int i = 0; i<idz; i++) {
+            NSData *serviceData = [keyChain find:[NSString stringWithFormat:@"%@%@%ld", login, token, (long)idz]];
+            NSData *serLoginData = [keyChain find:[NSString stringWithFormat:@"%@%@%ld", login, token, (long)idz]];
+            NSString *service = [[NSString alloc]initWithData:serviceData encoding:NSUTF8StringEncoding];
+            NSString *serLogin = [[NSString alloc]initWithData:serLoginData encoding:NSUTF8StringEncoding];
+            LoginsModel *model = [[LoginsModel alloc]initWithLogin:service login:serLogin];
+            [_modelArray addObject:model];
+        }
+    
     [_tableView reloadData];
 }
 
