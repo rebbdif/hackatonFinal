@@ -9,179 +9,194 @@
 #import "KeychainWrapper.h"
 #import <Security/Security.h>
 
+//Unique string used to identify the keychain item:
 static const UInt8 kKeychainItemIdentifier[]    = "com.apple.dts.KeychainUI\0";
+
+@interface KeychainWrapper ()
+
+@property (nonatomic, strong) NSMutableDictionary *keychainData;
+@property (nonatomic, strong) NSMutableDictionary *genericPasswordQuery;
+
+@end
 
 @interface KeychainWrapper (PrivateMethods)
 
-
-// Следующие два метода транслируют словари между форматом, используемом
-// Контроллером вида (NSString *) и API Keychain Services:
+//The following two methods translate dictionaries between the format used by
+// the view controller (NSString *) and the Keychain Services API:
 - (NSMutableDictionary *)secItemFormatToDictionary:(NSDictionary *)dictionaryToConvert;
 - (NSMutableDictionary *)dictionaryToSecItemFormat:(NSDictionary *)dictionaryToConvert;
-// Метод, используемый для записи в keychain:
+// Method used to write data to the keychain:
 - (void)writeToKeychain;
 
 @end
 
+
 @implementation KeychainWrapper
 
-//синтезируем геттеры и сеттеры:
-@synthesize keychainData, genericPasswordQuery;
-
-- (id)init
+- (instancetype)init
 {
-    if ((self = [super init])) {
+    self = [super init];
+    
+    if (self) {
+        
         
         OSStatus keychainErr = noErr;
-        // Инициализируем keychain словарь поиска:
-        genericPasswordQuery = [[NSMutableDictionary alloc] init];
-        // Этот элемент keychain общий пароль.
-        [genericPasswordQuery setObject:(__bridge id)kSecClassGenericPassword
-                                 forKey:(__bridge id)kSecClass];
-        //  kSecAttrGeneric атрибут используется для хранения уникальной строки, используемой
-        // для идентификации и поиска этого keychain элемента. Сначпла строку конвертируем
-        // в NSData объект:
+        // Set up the keychain search dictionary:
+        _genericPasswordQuery = [[NSMutableDictionary alloc] init];
+        
+        // This keychain item is a generic password.
+        [_genericPasswordQuery setObject:(__bridge id)kSecClassGenericPassword
+                                  forKey:(__bridge id)kSecClass];
+        
+        // The kSecAttrGeneric attribute is used to store a unique string that is used
+        // to easily identify and find this keychain item. The string is first
+        // converted to an NSData object:
         NSData *keychainItemID = [NSData dataWithBytes:kKeychainItemIdentifier
                                                 length:strlen((const char *)kKeychainItemIdentifier)];
-        [genericPasswordQuery setObject:keychainItemID forKey:(__bridge id)kSecAttrGeneric];
-        // Возвращаем атрибуты только для первого вхождения:
-        [genericPasswordQuery setObject:(__bridge id)kSecMatchLimitOne forKey:(__bridge id)kSecMatchLimit];
-        // Возвращаем атрибуты keychain элемента (пароль
-        //  полученный в secItemFormatToDictionary: методе):
-        [genericPasswordQuery setObject:(__bridge id)kCFBooleanTrue
-                                 forKey:(__bridge id)kSecReturnAttributes];
+        [_genericPasswordQuery setObject:keychainItemID forKey:(__bridge id)kSecAttrGeneric];
         
-        //Инициализация словаря, используемого для хранения возвращаемых данных из keychain:
+        // Return the attributes of the first match only:
+        [_genericPasswordQuery setObject:(__bridge id)kSecMatchLimitOne forKey:(__bridge id)kSecMatchLimit];
+        
+        // Return the attributes of the keychain item (the password is
+        //  acquired in the secItemFormatToDictionary: method):
+        [_genericPasswordQuery setObject:(__bridge id)kCFBooleanTrue
+                                  forKey:(__bridge id)kSecReturnAttributes];
+        
+        //Initialize the dictionary used to hold return data from the keychain:
         CFMutableDictionaryRef outDictionary = nil;
-        // Если keychain элемент существует, возвращаем атрибуты элемента:
-        keychainErr = SecItemCopyMatching((__bridge CFDictionaryRef)genericPasswordQuery,
+        // If the keychain item exists, return the attributes of the item:
+        keychainErr = SecItemCopyMatching((__bridge CFDictionaryRef)_genericPasswordQuery,
                                           (CFTypeRef *)&outDictionary);
+        
         if (keychainErr == noErr) {
-            // Конвертируем словарь с данными в словарь, используемый контроллером вида:
+            // Convert the data dictionary into the format used by the view controller:
             self.keychainData = [self secItemFormatToDictionary:(__bridge_transfer NSMutableDictionary *)outDictionary];
         } else if (keychainErr == errSecItemNotFound) {
-            // Кидаем значения по умолчанию в keychain если нет соответствующего
-            // keychain элемента:
+            // Put default values into the keychain if no matching
+            // keychain item is found:
             [self resetKeychainItem];
             if (outDictionary) CFRelease(outDictionary);
         } else {
-            // Любая другая неожиданная ошибка.
+            // Any other error is unexpected.
             NSAssert(NO, @"Serious error.\n");
             if (outDictionary) CFRelease(outDictionary);
         }
     }
+    
     return self;
 }
 
-// Реализация метода mySetObject:forKey, который записывает атрибуты в keychain:
+// Implement the mySetObject:forKey method, which writes attributes to the keychain:
 - (void)mySetObject:(id)inObject forKey:(id)key
 {
     if (inObject == nil) return;
-    id currentObject = [keychainData objectForKey:key];
+    id currentObject = [_keychainData objectForKey:key];
     if (![currentObject isEqual:inObject])
     {
-        [keychainData setObject:inObject forKey:key];
+        [_keychainData setObject:inObject forKey:key];
         [self writeToKeychain];
     }
 }
 
-// Реализация метода myObjectForKey:, который значения атрибутов из словаря:
+// Implement the myObjectForKey: method, which reads an attribute value from a dictionary:
 - (id)myObjectForKey:(id)key
 {
-    return [keychainData objectForKey:key];
+    return [_keychainData objectForKey:key];
 }
 
-// Сброс значений в элементе keychain или создание нового элемента, если он
-// не существует:
+// Reset the values in the keychain item, or create a new item if it
+// doesn't already exist:
 
 - (void)resetKeychainItem
 {
-    if (!keychainData) //Создание keychainData словаря, если не существует.
+    if (!_keychainData) //Allocate the keychainData dictionary if it doesn't exist yet.
     {
         self.keychainData = [[NSMutableDictionary alloc] init];
     }
-    else if (keychainData)
+    else if (_keychainData)
     {
-        // Форматируем данные из keychainData словаря в формат, требуемый для вызовов
-        //  и кладем их в tmpDictionary:
+        // Format the data in the keychainData dictionary into the format needed for a query
+        //  and put it into tmpDictionary:
         NSMutableDictionary *tmpDictionary =
-        [self dictionaryToSecItemFormat:keychainData];
-        // Удаляем keychain элемент в ходе подготовки к сбросу значений:
+        [self dictionaryToSecItemFormat:_keychainData];
+        // Delete the keychain item in preparation for resetting the values:
         OSStatus errorcode = SecItemDelete((__bridge CFDictionaryRef)tmpDictionary);
         NSAssert(errorcode == noErr, @"Problem deleting current keychain item." );
     }
     
-    // Общие данные, по умолчанию, для Keychain элемента:
-    [keychainData setObject:@"Item label" forKey:(__bridge id)kSecAttrLabel];
-    [keychainData setObject:@"Item description" forKey:(__bridge id)kSecAttrDescription];
-    [keychainData setObject:@"Account" forKey:(__bridge id)kSecAttrAccount];
-    [keychainData setObject:@"Service" forKey:(__bridge id)kSecAttrService];
-    [keychainData setObject:@"Your comment here." forKey:(__bridge id)kSecAttrComment];
-    [keychainData setObject:@"password" forKey:(__bridge id)kSecValueData];
+    // Default generic data for Keychain Item:
+    [_keychainData setObject:@"Item label" forKey:(__bridge id)kSecAttrLabel];
+    [_keychainData setObject:@"Item description" forKey:(__bridge id)kSecAttrDescription];
+    [_keychainData setObject:@"Account" forKey:(__bridge id)kSecAttrAccount];
+    [_keychainData setObject:@"Service" forKey:(__bridge id)kSecAttrService];
+    [_keychainData setObject:@"Your comment here." forKey:(__bridge id)kSecAttrComment];
+    [_keychainData setObject:@"password" forKey:(__bridge id)kSecValueData];
 }
 
-// Реализация метода dictionaryToSecItemFormat:, который принимает атрибуты, которые
-// вы хотите добавить в keychain элемент и устанавливает словарь в формат
-// пригодный для Keychain Services:
+
+// Implement the dictionaryToSecItemFormat: method, which takes the attributes that
+// you want to add to the keychain item and sets up a dictionary in the format
+// needed by Keychain Services:
 - (NSMutableDictionary *)dictionaryToSecItemFormat:(NSDictionary *)dictionaryToConvert
 {
-    // Этот метод должен быть вызван с правильно заполненным словарем,
-    // содержащим все правильные пары ключ/значение для keychain элемента.
+    // This method must be called with a properly populated dictionary
+    // containing all the right key/value pairs for a keychain item search.
     
-    // Создаем словарь для возвращения:
+    // Create the return dictionary:
     NSMutableDictionary *returnDictionary =
     [NSMutableDictionary dictionaryWithDictionary:dictionaryToConvert];
     
-    // Добавляем keychain элемент класс и общий атрибут:
+    // Add the keychain item class and the generic attribute:
     NSData *keychainItemID = [NSData dataWithBytes:kKeychainItemIdentifier
                                             length:strlen((const char *)kKeychainItemIdentifier)];
     [returnDictionary setObject:keychainItemID forKey:(__bridge id)kSecAttrGeneric];
     [returnDictionary setObject:(__bridge id)kSecClassGenericPassword forKey:(__bridge id)kSecClass];
     
-    // Конвертируем пароль из NSString в NSData чтобы соответствовать API Keychain:
+    // Convert the password NSString to NSData to fit the API paradigm:
     NSString *passwordString = [dictionaryToConvert objectForKey:(__bridge id)kSecValueData];
     [returnDictionary setObject:[passwordString dataUsingEncoding:NSUTF8StringEncoding]
                          forKey:(__bridge id)kSecValueData];
     return returnDictionary;
 }
 
-// Реализация метода secItemFormatToDictionary:, который принимает словарь атрибутов
-//  получаемый из элемента keychain, получает пароль из keychain, и
-//  добавляет его в словарь атрибутов:
+// Implement the secItemFormatToDictionary: method, which takes the attribute dictionary
+//  obtained from the keychain item, acquires the password from the keychain, and
+//  adds it to the attribute dictionary:
 - (NSMutableDictionary *)secItemFormatToDictionary:(NSDictionary *)dictionaryToConvert
 {
-    // Данный метод должен вызываться с правильно заполненным словарем,
-    // содержащим корректные значения пар ключ/значение для keychain элемента.
+    // This method must be called with a properly populated dictionary
+    // containing all the right key/value pairs for the keychain item.
     
-    // Создаем словарь возврата заполняемый атрибутами:
+    // Create a return dictionary populated with the attributes:
     NSMutableDictionary *returnDictionary = [NSMutableDictionary
                                              dictionaryWithDictionary:dictionaryToConvert];
     
-    // Для получения данных пароля от элемента keychain,
-    // сначала добавим ключ поиска и атрибут класса, необходимый для получения пароля:
+    // To acquire the password data from the keychain item,
+    // first add the search key and class attribute required to obtain the password:
     [returnDictionary setObject:(__bridge id)kCFBooleanTrue forKey:(__bridge id)kSecReturnData];
     [returnDictionary setObject:(__bridge id)kSecClassGenericPassword forKey:(__bridge id)kSecClass];
-    // Теперь вызов Keychain Services для получения пароля:
+    // Then call Keychain Services to get the password:
     CFDataRef passwordData = NULL;
     OSStatus keychainError = noErr; //
     keychainError = SecItemCopyMatching((__bridge CFDictionaryRef)returnDictionary,
                                         (CFTypeRef *)&passwordData);
     if (keychainError == noErr)
     {
-        // Удаляем kSecReturnData ключ; мы больше в нем не нуждаемся:
+        // Remove the kSecReturnData key; we don't need it anymore:
         [returnDictionary removeObjectForKey:(__bridge id)kSecReturnData];
         
-        // Конвертируем пароль в NSString и добавляем в возвращаемый словарь:
+        // Convert the password to an NSString and add it to the return dictionary:
         NSString *password = [[NSString alloc] initWithBytes:[(__bridge_transfer NSData *)passwordData bytes]
                                                       length:[(__bridge NSData *)passwordData length] encoding:NSUTF8StringEncoding];
         [returnDictionary setObject:password forKey:(__bridge id)kSecValueData];
     }
-    // Ничего не делать, если ничего не найдено.
+    // Don't do anything if nothing is found.
     else if (keychainError == errSecItemNotFound) {
         NSAssert(NO, @"Nothing was found in the keychain.\n");
         if (passwordData) CFRelease(passwordData);
     }
-    // Какая либо другая ошибка.
+    // Any other error is unexpected.
     else
     {
         NSAssert(NO, @"Serious error.\n");
@@ -191,35 +206,31 @@ static const UInt8 kKeychainItemIdentifier[]    = "com.apple.dts.KeychainUI\0";
     return returnDictionary;
 }
 
-// Реализация метода writeToKeychain, который вызывает mySetObject метод,
-// который в свою очередь вызывается через UI, когда есть новые данные для keychain. Этот
-// метод изменяет существующий элемент keychain или - если элемент не
-// существует - создает новый элемент keychain с новым значением атрибута плюс значениями
-// по умолчанию для других атрибутов.
-- (void)writeToKeychain
-{
+// could be in a class
+- (void)writeToKeychain {
+    
     CFDictionaryRef attributes = nil;
     NSMutableDictionary *updateItem = nil;
     
-    // Если keychain элемент уже существует, модифицируем его:
-    if (SecItemCopyMatching((__bridge CFDictionaryRef)genericPasswordQuery,
+    // If the keychain item already exists, modify it:
+    if (SecItemCopyMatching((__bridge CFDictionaryRef)_genericPasswordQuery,
                             (CFTypeRef *)&attributes) == noErr)
     {
-        // Во-первых, получить атрибуты, возвращенные из keychain и добавить их в
-        // словарь, который контролирует обновления:
+        // First, get the attributes returned from the keychain and add them to the
+        // dictionary that controls the update:
         updateItem = [NSMutableDictionary dictionaryWithDictionary:(__bridge_transfer NSDictionary *)attributes];
         
-        // Во-вторых, получить значение класса из общего пароля словаря запроса и
-        // добавить его в словарь updateItem:
-        [updateItem setObject:[genericPasswordQuery objectForKey:(__bridge id)kSecClass]
+        // Second, get the class value from the generic password query dictionary and
+        // add it to the updateItem dictionary:
+        [updateItem setObject:[_genericPasswordQuery objectForKey:(__bridge id)kSecClass]
                        forKey:(__bridge id)kSecClass];
         
-        // Наконец, настроить словарь, содержащий новые значения для атрибутов:
-        NSMutableDictionary *tempCheck = [self dictionaryToSecItemFormat:keychainData];
-        //Удаляем класс, который не keychain атрибут:
+        // Finally, set up the dictionary that contains new values for the attributes:
+        NSMutableDictionary *tempCheck = [self dictionaryToSecItemFormat:_keychainData];
+        //Remove the class--it's not a keychain attribute:
         [tempCheck removeObjectForKey:(__bridge id)kSecClass];
         
-        // Вы можете обновить только один keychain элемент за раз.
+        // You can update only a single keychain item at a time.
         OSStatus errorcode = SecItemUpdate(
                                            (__bridge CFDictionaryRef)updateItem,
                                            (__bridge CFDictionaryRef)tempCheck);
@@ -227,16 +238,18 @@ static const UInt8 kKeychainItemIdentifier[]    = "com.apple.dts.KeychainUI\0";
     }
     else
     {
-        // Если элемент не найден; добавить новый элемент.
-        // Новое значение было добавлено в словарь keychainData в процедуре mySetObject,
-        // И другие значения были добавлены в словарь keychainData ранее.
-        // Указатель на вновь добавленные элементы не требуется, поэтому указываем NULL в качестве второго параметра:
+        // No previous item found; add the new item.
+        // The new value was added to the keychainData dictionary in the mySetObject routine,
+        // and the other values were added to the keychainData dictionary previously.
+        // No pointer to the newly-added items is needed, so pass NULL for the second parameter:
         OSStatus errorcode = SecItemAdd(
-                                        (__bridge CFDictionaryRef)[self dictionaryToSecItemFormat:keychainData],
+                                        (__bridge CFDictionaryRef)[self dictionaryToSecItemFormat:_keychainData],
                                         NULL);
         NSAssert(errorcode == noErr, @"Couldn't add the Keychain Item." );
         if (attributes) CFRelease(attributes);
     }
+    
 }
+
 
 @end

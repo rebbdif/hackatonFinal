@@ -7,18 +7,12 @@
 //
 
 #import <Foundation/Foundation.h>
+#import <Security/Security.h>
 
-@interface KeychainWrapper : NSObject {
-    NSMutableDictionary        *keychainData;
-    NSMutableDictionary        *genericPasswordQuery;
-}
-
-@property (nonatomic, strong) NSMutableDictionary *keychainData;
-@property (nonatomic, strong) NSMutableDictionary *genericPasswordQuery;
+@interface KeychainWrapper : NSObject
 
 - (void)mySetObject:(id)inObject forKey:(id)key;
 - (id)myObjectForKey:(id)key;
-- (void)resetKeychainItem;
-
+- (void)writeToKeychain;
 
 @end

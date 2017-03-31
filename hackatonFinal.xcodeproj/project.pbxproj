@@ -29,6 +29,7 @@
 		D3890AD91E8E96F70038E7EB /* ISRegVC.m in Sources */ = {isa = PBXBuildFile; fileRef = D3890AD71E8E96F70038E7EB /* ISRegVC.m */; };
 		D3890ADD1E8EA4EC0038E7EB /* ISUser.m in Sources */ = {isa = PBXBuildFile; fileRef = D3890ADC1E8EA4EC0038E7EB /* ISUser.m */; };
 		D3F5E36D1E8EC3F500DC9C5B /* KeychainWrapper.m in Sources */ = {isa = PBXBuildFile; fileRef = D3F5E36C1E8EC3F500DC9C5B /* KeychainWrapper.m */; };
+		D3F5E3711E8EDE6100DC9C5B /* Keychain.m in Sources */ = {isa = PBXBuildFile; fileRef = D3F5E3701E8EDE6100DC9C5B /* Keychain.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -69,6 +70,8 @@
 		D3890ADC1E8EA4EC0038E7EB /* ISUser.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ISUser.m; path = ../ISUser.m; sourceTree = "<group>"; };
 		D3F5E36B1E8EC3F500DC9C5B /* KeychainWrapper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KeychainWrapper.h; sourceTree = "<group>"; };
 		D3F5E36C1E8EC3F500DC9C5B /* KeychainWrapper.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KeychainWrapper.m; sourceTree = "<group>"; };
+		D3F5E36F1E8EDE6100DC9C5B /* Keychain.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Keychain.h; sourceTree = "<group>"; };
+		D3F5E3701E8EDE6100DC9C5B /* Keychain.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Keychain.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -190,6 +193,8 @@
 			children = (
 				D3890AD21E8E96D50038E7EB /* login.storyboard */,
 				D3890AD41E8E96F70038E7EB /* ISLoginVC.h */,
+				D3F5E36F1E8EDE6100DC9C5B /* Keychain.h */,
+				D3F5E3701E8EDE6100DC9C5B /* Keychain.m */,
 				D3890AD51E8E96F70038E7EB /* ISLoginVC.m */,
 				D3890AD61E8E96F70038E7EB /* ISRegVC.h */,
 				D3890AD71E8E96F70038E7EB /* ISRegVC.m */,
@@ -275,6 +280,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				639C49091E8E7F9C0073E53D /* MyTouchModel.m in Sources */,
+				D3F5E3711E8EDE6100DC9C5B /* Keychain.m in Sources */,
 				18ADE43E1E8EA3D300F983E5 /* LoginController.m in Sources */,
 				18AD0CFD1E8E8ACC00F8C7A4 /* Sha256.m in Sources */,
 				639C48F51E8E4F010073E53D /* ViewController.m in Sources */,
