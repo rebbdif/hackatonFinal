@@ -22,10 +22,10 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Ju2-pf-IYh">
-                                <rect key="frame" x="0.0" y="20" width="600" height="282"/>
+                                <rect key="frame" x="0.0" y="20" width="375" height="282"/>
                                 <subviews>
                                     <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="login" translatesAutoresizingMaskIntoConstraints="NO" id="7g2-Xc-4HH">
-                                        <rect key="frame" x="251" y="10" width="100" height="262"/>
+                                        <rect key="frame" x="137.5" y="10" width="100" height="262"/>
                                         <constraints>
                                             <constraint firstAttribute="width" relation="lessThanOrEqual" constant="100" id="fjd-Bd-Hiy"/>
                                         </constraints>
@@ -39,17 +39,17 @@
                                 </constraints>
                             </view>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="0EN-MX-BTi">
-                                <rect key="frame" x="0.0" y="302" width="600" height="38"/>
+                                <rect key="frame" x="0.0" y="302" width="375" height="38"/>
                                 <subviews>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="bGB-Yg-QSV">
-                                        <rect key="frame" x="0.0" y="0.0" width="300" height="38"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="187.5" height="38"/>
                                         <color key="backgroundColor" red="0.99798494577407837" green="0.32227906584739685" blue="0.72110062837600708" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <fontDescription key="fontDescription" name="PingFangTC-Light" family="PingFang TC" pointSize="18"/>
                                         <color key="tintColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                         <state key="normal" title="Войти"/>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="IMT-Jj-3Z6">
-                                        <rect key="frame" x="300" y="0.0" width="300" height="38"/>
+                                        <rect key="frame" x="187.5" y="0.0" width="187.5" height="38"/>
                                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                         <fontDescription key="fontDescription" name="PingFangTC-Light" family="PingFang TC" pointSize="18"/>
                                         <state key="normal" title="Регистрация">
@@ -74,10 +74,10 @@
                                 </constraints>
                             </view>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="scz-91-J31">
-                                <rect key="frame" x="0.0" y="340" width="600" height="90"/>
+                                <rect key="frame" x="0.0" y="340" width="375" height="90"/>
                                 <subviews>
                                     <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Пароль" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="tCs-Th-Yot">
-                                        <rect key="frame" x="12" y="45" width="588" height="45"/>
+                                        <rect key="frame" x="12" y="45" width="363" height="45"/>
                                         <nil key="textColor"/>
                                         <fontDescription key="fontDescription" name="PingFangTC-Light" family="PingFang TC" pointSize="18"/>
                                         <textInputTraits key="textInputTraits" secureTextEntry="YES"/>
@@ -86,7 +86,7 @@
                                         </connections>
                                     </textField>
                                     <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Login" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="q2b-eo-4Md">
-                                        <rect key="frame" x="12" y="0.0" width="588" height="45"/>
+                                        <rect key="frame" x="12" y="0.0" width="363" height="45"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="45" id="ZIR-L9-CnQ"/>
                                         </constraints>
@@ -112,10 +112,10 @@
                                 </constraints>
                             </view>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="7vg-jF-0Oa">
-                                <rect key="frame" x="0.0" y="430" width="600" height="170"/>
+                                <rect key="frame" x="0.0" y="430" width="375" height="237"/>
                                 <subviews>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Abc-VW-mdd">
-                                        <rect key="frame" x="8" y="26" width="584" height="44"/>
+                                        <rect key="frame" x="8" y="26" width="359" height="44"/>
                                         <color key="backgroundColor" red="0.99798494579999997" green="0.32227906579999999" blue="0.7211006284" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="44" id="3OT-re-XfN"/>
@@ -130,7 +130,7 @@
                                         </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Q5N-TM-51V">
-                                        <rect key="frame" x="56" y="121" width="488" height="31"/>
+                                        <rect key="frame" x="56" y="188" width="263" height="31"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="31" id="kAl-dM-gHy"/>
                                         </constraints>
@@ -204,10 +204,10 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="tBY-2p-1aZ">
-                                <rect key="frame" x="0.0" y="20" width="600" height="192"/>
+                                <rect key="frame" x="0.0" y="20" width="375" height="192"/>
                                 <subviews>
                                     <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="login" translatesAutoresizingMaskIntoConstraints="NO" id="Gh0-z5-MG0">
-                                        <rect key="frame" x="251" y="34" width="100" height="125"/>
+                                        <rect key="frame" x="137.5" y="34" width="100" height="125"/>
                                         <constraints>
                                             <constraint firstAttribute="width" relation="lessThanOrEqual" constant="100" id="EEz-Iu-KsW"/>
                                         </constraints>
@@ -221,10 +221,10 @@
                                 </constraints>
                             </view>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="SrC-qi-8R7">
-                                <rect key="frame" x="0.0" y="212" width="600" height="38"/>
+                                <rect key="frame" x="0.0" y="212" width="375" height="38"/>
                                 <subviews>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="87y-J6-og3">
-                                        <rect key="frame" x="0.0" y="0.0" width="300" height="38"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="187.5" height="38"/>
                                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                         <fontDescription key="fontDescription" name="PingFangTC-Light" family="PingFang TC" pointSize="18"/>
                                         <color key="tintColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
@@ -236,7 +236,7 @@
                                         </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="q4x-Wj-rPd">
-                                        <rect key="frame" x="300" y="0.0" width="300" height="38"/>
+                                        <rect key="frame" x="187.5" y="0.0" width="187.5" height="38"/>
                                         <color key="backgroundColor" red="0.99607843137254903" green="0.32156862745098036" blue="0.72156862745098038" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <fontDescription key="fontDescription" name="PingFangTC-Light" family="PingFang TC" pointSize="18"/>
                                         <state key="normal" title="Регистрация">
@@ -258,10 +258,10 @@
                                 </constraints>
                             </view>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="TIK-Pq-quR">
-                                <rect key="frame" x="0.0" y="250" width="600" height="135"/>
+                                <rect key="frame" x="0.0" y="250" width="375" height="135"/>
                                 <subviews>
                                     <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Login" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="knK-Kd-bYN">
-                                        <rect key="frame" x="12" y="0.0" width="588" height="45"/>
+                                        <rect key="frame" x="12" y="0.0" width="363" height="45"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="45" id="gWz-4u-vI9"/>
                                         </constraints>
@@ -273,7 +273,7 @@
                                         </connections>
                                     </textField>
                                     <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Пароль ещё раз" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="d8u-bC-6CP">
-                                        <rect key="frame" x="12" y="90" width="588" height="45"/>
+                                        <rect key="frame" x="12" y="90" width="363" height="45"/>
                                         <nil key="textColor"/>
                                         <fontDescription key="fontDescription" name="PingFangTC-Light" family="PingFang TC" pointSize="18"/>
                                         <textInputTraits key="textInputTraits" autocorrectionType="no"/>
@@ -282,7 +282,7 @@
                                         </connections>
                                     </textField>
                                     <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Пароль" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="hcS-kb-afU">
-                                        <rect key="frame" x="12" y="45" width="588" height="45"/>
+                                        <rect key="frame" x="12" y="45" width="363" height="45"/>
                                         <nil key="textColor"/>
                                         <fontDescription key="fontDescription" name="PingFangTC-Light" family="PingFang TC" pointSize="18"/>
                                         <textInputTraits key="textInputTraits" secureTextEntry="YES"/>
@@ -310,10 +310,10 @@
                                 </constraints>
                             </view>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="cbA-Wi-XAf">
-                                <rect key="frame" x="0.0" y="385" width="600" height="215"/>
+                                <rect key="frame" x="0.0" y="385" width="375" height="282"/>
                                 <subviews>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="clip" translatesAutoresizingMaskIntoConstraints="NO" id="63P-2d-dLh">
-                                        <rect key="frame" x="8" y="26" width="584" height="44"/>
+                                        <rect key="frame" x="8" y="26" width="359" height="44"/>
                                         <color key="backgroundColor" red="0.99798494579999997" green="0.32227906579999999" blue="0.7211006284" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="44" id="Xpx-Jk-iDr"/>
@@ -328,7 +328,7 @@
                                         </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="K0t-3Z-avV">
-                                        <rect key="frame" x="56" y="166" width="488" height="31"/>
+                                        <rect key="frame" x="56" y="233" width="263" height="31"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="31" id="44X-uo-jwB"/>
                                         </constraints>
@@ -399,10 +399,10 @@
             </objects>
             <point key="canvasLocation" x="1788" y="-99"/>
         </scene>
-        <!--Storyboard Reference-->
+        <!--MSCollectionStoryboard-->
         <scene sceneID="6Pg-8P-8mD">
             <objects>
-                <viewControllerPlaceholder id="fhJ-3a-bVp" sceneMemberID="viewController">
+                <viewControllerPlaceholder storyboardName="MSCollectionStoryboard" id="fhJ-3a-bVp" sceneMemberID="viewController">
                     <tabBarItem key="tabBarItem" title="Item" id="J2I-LC-HHe"/>
                 </viewControllerPlaceholder>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="aOz-l3-sdu" userLabel="First Responder" sceneMemberID="firstResponder"/>
