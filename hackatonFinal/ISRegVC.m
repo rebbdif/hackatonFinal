@@ -22,6 +22,10 @@
 
 @end
 
+
+static const UInt8 kKeychainItemIdentifier[]    = "com.apple.dts.KeychainUI\0";
+
+
 @implementation ISRegVC
 
 - (void)viewDidLoad {
@@ -178,9 +182,12 @@
         NSString* hash=[sha hmacSHA256:user.login data:user.pasword];
         NSLog(@"%@",hash);
         NSMutableDictionary* genericPasswordQuery = [[NSMutableDictionary alloc] init];
-       // [genericPasswordQuery setObject:<#(nonnull id)#> forKey:<#(nonnull id<NSCopying>)#>];
+        [genericPasswordQuery setObject:(id)kSecClassGenericPassword forKey:(id)kSecClass];
+        NSData *keychainItemID = [NSData dataWithBytes:kKeychainItemIdentifier
+                                                length:strlen((const char *)kKeychainItemIdentifier)];
         
-       // kSecClassGenericPassword
+        
+        
         
         
     }else
