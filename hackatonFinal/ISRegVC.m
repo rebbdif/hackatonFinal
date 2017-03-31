@@ -11,8 +11,11 @@
 #import "ISUser.h"
 #import "Sha256.h"
 #import <Security/Security.h>
+#import "KeychainWrapper.h"
+#import "Keychain.h"
 
-
+#define SERVICE_NAME @"ANY_NAME_FOR_YOU"
+#define GROUP_NAME @"YOUR_APP_ID.com.apps.shared" //GROUP NAME should start with appl
 
 @interface ISRegVC ()
 
@@ -59,10 +62,7 @@ static const UInt8 kKeychainItemIdentifier[]    = "com.apple.dts.KeychainUI\0";
             
             tf.alpha=1;
         }
-        
-        
-        
-        
+
         
     } completion:^(BOOL finished) {
         
@@ -179,14 +179,40 @@ static const UInt8 kKeychainItemIdentifier[]    = "com.apple.dts.KeychainUI\0";
         user.login=self.mailTF.text;
         user.pasword=self.passwordTF.text;
         Sha256* sha=[[Sha256 alloc]init];
-        NSString* hash=[sha hmacSHA256:user.login data:user.pasword];
-        NSLog(@"%@",hash);
-        NSMutableDictionary* genericPasswordQuery = [[NSMutableDictionary alloc] init];
-        [genericPasswordQuery setObject:(id)kSecClassGenericPassword forKey:(id)kSecClass];
-        NSData *keychainItemID = [NSData dataWithBytes:kKeychainItemIdentifier
-                                                length:strlen((const char *)kKeychainItemIdentifier)];
+        NSString* token=[[[UIDevice currentDevice]identifierForVendor] UUIDString];
+        NSString* login=user.login;
+        NSString* pasword=user.pasword;
+        NSString* logPlTok=[NSString stringWithFormat:@"%@%@",pasword,token];
+        NSString* hash=[sha hmacSHA256:login data:logPlTok];
+        
+        Keychain* chain=[[Keychain alloc]initWithService:SERVICE_NAME withGroup:nil];
+        NSString *key =login;
+        NSData * value = [hash dataUsingEncoding:NSUTF8StringEncoding];
+        
+        if([chain insert:key :value])
+        {
+            NSLog(@"Successfully added data");
+        }
+        else
+            NSLog(@"Failed to  add data");
         
         
+        
+//        NSData * data =[chain find:key];
+//        if(data == nil)
+//        {
+//            NSLog(@"Keychain data not found");
+//        }
+//        else
+//        {
+//            NSLog(@"Data is =%@",[[NSString alloc] initWithData:data encoding:NSUTF8StringEncoding]);
+//        }
+        
+        
+    //    [chain mySetObject:hash forKey:kSecValueData];
+     //   [chain writeToKeychain];
+  //      CFStringRef aCFString = (__bridge CFStringRef)hash;
+    //    NSLog(@"rjlwejgo;ewj;w%@",[chain myObjectForKey:kSecValueData]);
         
         
         
