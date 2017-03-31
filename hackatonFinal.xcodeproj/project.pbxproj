@@ -8,6 +8,11 @@
 
 /* Begin PBXBuildFile section */
 		18AD0CFD1E8E8ACC00F8C7A4 /* Sha256.m in Sources */ = {isa = PBXBuildFile; fileRef = 18AD0CFC1E8E8ACC00F8C7A4 /* Sha256.m */; };
+		18ADE4331E8E96C300F983E5 /* LoginsModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 18ADE4321E8E96C300F983E5 /* LoginsModel.m */; };
+		18ADE4351E8E995800F983E5 /* TableStoryboard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 18ADE4341E8E995800F983E5 /* TableStoryboard.storyboard */; };
+		18ADE4381E8E9C5E00F983E5 /* SearchCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 18ADE4371E8E9C5E00F983E5 /* SearchCell.m */; };
+		18ADE43B1E8EA18400F983E5 /* LoginCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 18ADE43A1E8EA18400F983E5 /* LoginCell.m */; };
+		18ADE43E1E8EA3D300F983E5 /* LoginController.m in Sources */ = {isa = PBXBuildFile; fileRef = 18ADE43D1E8EA3D300F983E5 /* LoginController.m */; };
 		639C48EF1E8E4F010073E53D /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 639C48EE1E8E4F010073E53D /* main.m */; };
 		639C48F21E8E4F010073E53D /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 639C48F11E8E4F010073E53D /* AppDelegate.m */; };
 		639C48F51E8E4F010073E53D /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 639C48F41E8E4F010073E53D /* ViewController.m */; };
@@ -24,6 +29,15 @@
 /* Begin PBXFileReference section */
 		18AD0CFB1E8E8ACC00F8C7A4 /* Sha256.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Sha256.h; sourceTree = "<group>"; };
 		18AD0CFC1E8E8ACC00F8C7A4 /* Sha256.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Sha256.m; sourceTree = "<group>"; };
+		18ADE4311E8E96C300F983E5 /* LoginsModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LoginsModel.h; sourceTree = "<group>"; };
+		18ADE4321E8E96C300F983E5 /* LoginsModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LoginsModel.m; sourceTree = "<group>"; };
+		18ADE4341E8E995800F983E5 /* TableStoryboard.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = TableStoryboard.storyboard; sourceTree = "<group>"; };
+		18ADE4361E8E9C5E00F983E5 /* SearchCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SearchCell.h; sourceTree = "<group>"; };
+		18ADE4371E8E9C5E00F983E5 /* SearchCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SearchCell.m; sourceTree = "<group>"; };
+		18ADE4391E8EA18400F983E5 /* LoginCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LoginCell.h; sourceTree = "<group>"; };
+		18ADE43A1E8EA18400F983E5 /* LoginCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LoginCell.m; sourceTree = "<group>"; };
+		18ADE43C1E8EA3D300F983E5 /* LoginController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LoginController.h; sourceTree = "<group>"; };
+		18ADE43D1E8EA3D300F983E5 /* LoginController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LoginController.m; sourceTree = "<group>"; };
 		639C48EA1E8E4F010073E53D /* hackatonFinal.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = hackatonFinal.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		639C48EE1E8E4F010073E53D /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		639C48F01E8E4F010073E53D /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
@@ -68,15 +82,24 @@
 		18ADE42F1E8E943E00F983E5 /* LoginTable */ = {
 			isa = PBXGroup;
 			children = (
+				18ADE4341E8E995800F983E5 /* TableStoryboard.storyboard */,
+				18ADE4361E8E9C5E00F983E5 /* SearchCell.h */,
+				18ADE4371E8E9C5E00F983E5 /* SearchCell.m */,
+				18ADE4391E8EA18400F983E5 /* LoginCell.h */,
+				18ADE43A1E8EA18400F983E5 /* LoginCell.m */,
+				18ADE43C1E8EA3D300F983E5 /* LoginController.h */,
+				18ADE43D1E8EA3D300F983E5 /* LoginController.m */,
 			);
-			name = LoginTable;
+			path = LoginTable;
 			sourceTree = "<group>";
 		};
 		18ADE4301E8E947000F983E5 /* models */ = {
 			isa = PBXGroup;
 			children = (
+				18ADE4311E8E96C300F983E5 /* LoginsModel.h */,
+				18ADE4321E8E96C300F983E5 /* LoginsModel.m */,
 			);
-			name = models;
+			path = models;
 			sourceTree = "<group>";
 		};
 		639C48E11E8E4F000073E53D = {
@@ -208,6 +231,7 @@
 				639C490E1E8E7FEE0073E53D /* MyTouchStoryboard.storyboard in Resources */,
 				639C48FD1E8E4F010073E53D /* Assets.xcassets in Resources */,
 				639C48F81E8E4F010073E53D /* Main.storyboard in Resources */,
+				18ADE4351E8E995800F983E5 /* TableStoryboard.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -219,10 +243,14 @@
 			buildActionMask = 2147483647;
 			files = (
 				639C49091E8E7F9C0073E53D /* MyTouchModel.m in Sources */,
+				18ADE43E1E8EA3D300F983E5 /* LoginController.m in Sources */,
 				18AD0CFD1E8E8ACC00F8C7A4 /* Sha256.m in Sources */,
 				639C48F51E8E4F010073E53D /* ViewController.m in Sources */,
+				18ADE43B1E8EA18400F983E5 /* LoginCell.m in Sources */,
+				18ADE4381E8E9C5E00F983E5 /* SearchCell.m in Sources */,
 				639C490C1E8E7FCF0073E53D /* MyTouchVC.m in Sources */,
 				639C48FB1E8E4F010073E53D /* hackatonFinal.xcdatamodeld in Sources */,
+				18ADE4331E8E96C300F983E5 /* LoginsModel.m in Sources */,
 				639C48F21E8E4F010073E53D /* AppDelegate.m in Sources */,
 				639C48EF1E8E4F010073E53D /* main.m in Sources */,
 			);
