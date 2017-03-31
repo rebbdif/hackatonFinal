@@ -8,6 +8,11 @@
 
 /* Begin PBXBuildFile section */
 		18AD0CFD1E8E8ACC00F8C7A4 /* Sha256.m in Sources */ = {isa = PBXBuildFile; fileRef = 18AD0CFC1E8E8ACC00F8C7A4 /* Sha256.m */; };
+		18ADE4331E8E96C300F983E5 /* LoginsModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 18ADE4321E8E96C300F983E5 /* LoginsModel.m */; };
+		18ADE4351E8E995800F983E5 /* TableStoryboard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 18ADE4341E8E995800F983E5 /* TableStoryboard.storyboard */; };
+		18ADE4381E8E9C5E00F983E5 /* SearchCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 18ADE4371E8E9C5E00F983E5 /* SearchCell.m */; };
+		18ADE43B1E8EA18400F983E5 /* LoginCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 18ADE43A1E8EA18400F983E5 /* LoginCell.m */; };
+		18ADE43E1E8EA3D300F983E5 /* LoginController.m in Sources */ = {isa = PBXBuildFile; fileRef = 18ADE43D1E8EA3D300F983E5 /* LoginController.m */; };
 		639C48EF1E8E4F010073E53D /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 639C48EE1E8E4F010073E53D /* main.m */; };
 		639C48F21E8E4F010073E53D /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 639C48F11E8E4F010073E53D /* AppDelegate.m */; };
 		639C48F51E8E4F010073E53D /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 639C48F41E8E4F010073E53D /* ViewController.m */; };
@@ -19,14 +24,30 @@
 		639C490C1E8E7FCF0073E53D /* MyTouchVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 639C490B1E8E7FCF0073E53D /* MyTouchVC.m */; };
 		639C490E1E8E7FEE0073E53D /* MyTouchStoryboard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 639C490D1E8E7FEE0073E53D /* MyTouchStoryboard.storyboard */; };
 		639C49121E8E86410073E53D /* LocalAuthentication.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 639C49111E8E86410073E53D /* LocalAuthentication.framework */; };
+
 		F5920D5D1E8E977600CBD0FA /* MSCollectionVC.m in Sources */ = {isa = PBXBuildFile; fileRef = F5920D5C1E8E977600CBD0FA /* MSCollectionVC.m */; };
 		F5920D5F1E8E979300CBD0FA /* MSCollectionStoryboard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F5920D5E1E8E979300CBD0FA /* MSCollectionStoryboard.storyboard */; };
 		F5920D621E8EA05600CBD0FA /* MSCollectionLayout.m in Sources */ = {isa = PBXBuildFile; fileRef = F5920D611E8EA05600CBD0FA /* MSCollectionLayout.m */; };
+
+		D3890AD31E8E96D50038E7EB /* login.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D3890AD21E8E96D50038E7EB /* login.storyboard */; };
+		D3890AD81E8E96F70038E7EB /* ISLoginVC.m in Sources */ = {isa = PBXBuildFile; fileRef = D3890AD51E8E96F70038E7EB /* ISLoginVC.m */; };
+		D3890AD91E8E96F70038E7EB /* ISRegVC.m in Sources */ = {isa = PBXBuildFile; fileRef = D3890AD71E8E96F70038E7EB /* ISRegVC.m */; };
+		D3890ADD1E8EA4EC0038E7EB /* ISUser.m in Sources */ = {isa = PBXBuildFile; fileRef = D3890ADC1E8EA4EC0038E7EB /* ISUser.m */; };
+
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		18AD0CFB1E8E8ACC00F8C7A4 /* Sha256.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Sha256.h; sourceTree = "<group>"; };
 		18AD0CFC1E8E8ACC00F8C7A4 /* Sha256.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Sha256.m; sourceTree = "<group>"; };
+		18ADE4311E8E96C300F983E5 /* LoginsModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LoginsModel.h; sourceTree = "<group>"; };
+		18ADE4321E8E96C300F983E5 /* LoginsModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LoginsModel.m; sourceTree = "<group>"; };
+		18ADE4341E8E995800F983E5 /* TableStoryboard.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = TableStoryboard.storyboard; sourceTree = "<group>"; };
+		18ADE4361E8E9C5E00F983E5 /* SearchCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SearchCell.h; sourceTree = "<group>"; };
+		18ADE4371E8E9C5E00F983E5 /* SearchCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SearchCell.m; sourceTree = "<group>"; };
+		18ADE4391E8EA18400F983E5 /* LoginCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LoginCell.h; sourceTree = "<group>"; };
+		18ADE43A1E8EA18400F983E5 /* LoginCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LoginCell.m; sourceTree = "<group>"; };
+		18ADE43C1E8EA3D300F983E5 /* LoginController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LoginController.h; sourceTree = "<group>"; };
+		18ADE43D1E8EA3D300F983E5 /* LoginController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LoginController.m; sourceTree = "<group>"; };
 		639C48EA1E8E4F010073E53D /* hackatonFinal.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = hackatonFinal.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		639C48EE1E8E4F010073E53D /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		639C48F01E8E4F010073E53D /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
@@ -44,11 +65,21 @@
 		639C490B1E8E7FCF0073E53D /* MyTouchVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MyTouchVC.m; sourceTree = "<group>"; };
 		639C490D1E8E7FEE0073E53D /* MyTouchStoryboard.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = MyTouchStoryboard.storyboard; sourceTree = "<group>"; };
 		639C49111E8E86410073E53D /* LocalAuthentication.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = LocalAuthentication.framework; path = System/Library/Frameworks/LocalAuthentication.framework; sourceTree = SDKROOT; };
+
 		F5920D5B1E8E977600CBD0FA /* MSCollectionVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = MSCollectionVC.h; path = CollectionVC/MSCollectionVC.h; sourceTree = "<group>"; };
 		F5920D5C1E8E977600CBD0FA /* MSCollectionVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = MSCollectionVC.m; path = CollectionVC/MSCollectionVC.m; sourceTree = "<group>"; };
 		F5920D5E1E8E979300CBD0FA /* MSCollectionStoryboard.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; name = MSCollectionStoryboard.storyboard; path = CollectionVC/MSCollectionStoryboard.storyboard; sourceTree = "<group>"; };
 		F5920D601E8EA05600CBD0FA /* MSCollectionLayout.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = MSCollectionLayout.h; path = CollectionVC/MSCollectionLayout.h; sourceTree = "<group>"; };
 		F5920D611E8EA05600CBD0FA /* MSCollectionLayout.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = MSCollectionLayout.m; path = CollectionVC/MSCollectionLayout.m; sourceTree = "<group>"; };
+
+		D3890AD21E8E96D50038E7EB /* login.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = login.storyboard; sourceTree = "<group>"; };
+		D3890AD41E8E96F70038E7EB /* ISLoginVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ISLoginVC.h; sourceTree = "<group>"; };
+		D3890AD51E8E96F70038E7EB /* ISLoginVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ISLoginVC.m; sourceTree = "<group>"; };
+		D3890AD61E8E96F70038E7EB /* ISRegVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ISRegVC.h; sourceTree = "<group>"; };
+		D3890AD71E8E96F70038E7EB /* ISRegVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ISRegVC.m; sourceTree = "<group>"; };
+		D3890ADB1E8EA4EC0038E7EB /* ISUser.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ISUser.h; path = ../ISUser.h; sourceTree = "<group>"; };
+		D3890ADC1E8EA4EC0038E7EB /* ISUser.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ISUser.m; path = ../ISUser.m; sourceTree = "<group>"; };
+
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -76,15 +107,24 @@
 		18ADE42F1E8E943E00F983E5 /* LoginTable */ = {
 			isa = PBXGroup;
 			children = (
+				18ADE4341E8E995800F983E5 /* TableStoryboard.storyboard */,
+				18ADE4361E8E9C5E00F983E5 /* SearchCell.h */,
+				18ADE4371E8E9C5E00F983E5 /* SearchCell.m */,
+				18ADE4391E8EA18400F983E5 /* LoginCell.h */,
+				18ADE43A1E8EA18400F983E5 /* LoginCell.m */,
+				18ADE43C1E8EA3D300F983E5 /* LoginController.h */,
+				18ADE43D1E8EA3D300F983E5 /* LoginController.m */,
 			);
-			name = LoginTable;
+			path = LoginTable;
 			sourceTree = "<group>";
 		};
 		18ADE4301E8E947000F983E5 /* models */ = {
 			isa = PBXGroup;
 			children = (
+				18ADE4311E8E96C300F983E5 /* LoginsModel.h */,
+				18ADE4321E8E96C300F983E5 /* LoginsModel.m */,
 			);
-			name = models;
+			path = models;
 			sourceTree = "<group>";
 		};
 		639C48E11E8E4F000073E53D = {
@@ -112,7 +152,9 @@
 				18ADE42F1E8E943E00F983E5 /* LoginTable */,
 				18AD0CFA1E8E8A2700F8C7A4 /* sha256 */,
 				639C48F01E8E4F010073E53D /* AppDelegate.h */,
+				D3890ADA1E8E97060038E7EB /* login */,
 				639C48F11E8E4F010073E53D /* AppDelegate.m */,
+				D3890ADE1E8EA50F0038E7EB /* models */,
 				639C48F31E8E4F010073E53D /* ViewController.h */,
 				639C48F41E8E4F010073E53D /* ViewController.m */,
 				639C48F61E8E4F010073E53D /* Main.storyboard */,
@@ -154,6 +196,7 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
+
 		F5920D5A1E8E95E200CBD0FA /* CollectionVC */ = {
 			isa = PBXGroup;
 			children = (
@@ -164,6 +207,27 @@
 				F5920D611E8EA05600CBD0FA /* MSCollectionLayout.m */,
 			);
 			name = CollectionVC;
+
+		D3890ADA1E8E97060038E7EB /* login */ = {
+			isa = PBXGroup;
+			children = (
+				D3890AD21E8E96D50038E7EB /* login.storyboard */,
+				D3890AD41E8E96F70038E7EB /* ISLoginVC.h */,
+				D3890AD51E8E96F70038E7EB /* ISLoginVC.m */,
+				D3890AD61E8E96F70038E7EB /* ISRegVC.h */,
+				D3890AD71E8E96F70038E7EB /* ISRegVC.m */,
+			);
+			name = login;
+			sourceTree = "<group>";
+		};
+		D3890ADE1E8EA50F0038E7EB /* models */ = {
+			isa = PBXGroup;
+			children = (
+				D3890ADB1E8EA4EC0038E7EB /* ISUser.h */,
+				D3890ADC1E8EA4EC0038E7EB /* ISUser.m */,
+			);
+			path = models;
+
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -229,7 +293,9 @@
 				639C49001E8E4F010073E53D /* LaunchScreen.storyboard in Resources */,
 				639C490E1E8E7FEE0073E53D /* MyTouchStoryboard.storyboard in Resources */,
 				639C48FD1E8E4F010073E53D /* Assets.xcassets in Resources */,
+				D3890AD31E8E96D50038E7EB /* login.storyboard in Resources */,
 				639C48F81E8E4F010073E53D /* Main.storyboard in Resources */,
+				18ADE4351E8E995800F983E5 /* TableStoryboard.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -243,12 +309,19 @@
 				F5920D621E8EA05600CBD0FA /* MSCollectionLayout.m in Sources */,
 				F5920D5D1E8E977600CBD0FA /* MSCollectionVC.m in Sources */,
 				639C49091E8E7F9C0073E53D /* MyTouchModel.m in Sources */,
+				18ADE43E1E8EA3D300F983E5 /* LoginController.m in Sources */,
 				18AD0CFD1E8E8ACC00F8C7A4 /* Sha256.m in Sources */,
 				639C48F51E8E4F010073E53D /* ViewController.m in Sources */,
+				18ADE43B1E8EA18400F983E5 /* LoginCell.m in Sources */,
+				18ADE4381E8E9C5E00F983E5 /* SearchCell.m in Sources */,
+				D3890AD81E8E96F70038E7EB /* ISLoginVC.m in Sources */,
 				639C490C1E8E7FCF0073E53D /* MyTouchVC.m in Sources */,
 				639C48FB1E8E4F010073E53D /* hackatonFinal.xcdatamodeld in Sources */,
+				18ADE4331E8E96C300F983E5 /* LoginsModel.m in Sources */,
 				639C48F21E8E4F010073E53D /* AppDelegate.m in Sources */,
 				639C48EF1E8E4F010073E53D /* main.m in Sources */,
+				D3890ADD1E8EA4EC0038E7EB /* ISUser.m in Sources */,
+				D3890AD91E8E96F70038E7EB /* ISRegVC.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
