@@ -21,6 +21,7 @@
 		D3890AD31E8E96D50038E7EB /* login.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D3890AD21E8E96D50038E7EB /* login.storyboard */; };
 		D3890AD81E8E96F70038E7EB /* ISLoginVC.m in Sources */ = {isa = PBXBuildFile; fileRef = D3890AD51E8E96F70038E7EB /* ISLoginVC.m */; };
 		D3890AD91E8E96F70038E7EB /* ISRegVC.m in Sources */ = {isa = PBXBuildFile; fileRef = D3890AD71E8E96F70038E7EB /* ISRegVC.m */; };
+		D3890ADD1E8EA4EC0038E7EB /* ISUser.m in Sources */ = {isa = PBXBuildFile; fileRef = D3890ADC1E8EA4EC0038E7EB /* ISUser.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -46,6 +47,8 @@
 		D3890AD51E8E96F70038E7EB /* ISLoginVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ISLoginVC.m; sourceTree = "<group>"; };
 		D3890AD61E8E96F70038E7EB /* ISRegVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ISRegVC.h; sourceTree = "<group>"; };
 		D3890AD71E8E96F70038E7EB /* ISRegVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ISRegVC.m; sourceTree = "<group>"; };
+		D3890ADB1E8EA4EC0038E7EB /* ISUser.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ISUser.h; path = ../ISUser.h; sourceTree = "<group>"; };
+		D3890ADC1E8EA4EC0038E7EB /* ISUser.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ISUser.m; path = ../ISUser.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -83,6 +86,7 @@
 				639C48F01E8E4F010073E53D /* AppDelegate.h */,
 				D3890ADA1E8E97060038E7EB /* login */,
 				639C48F11E8E4F010073E53D /* AppDelegate.m */,
+				D3890ADE1E8EA50F0038E7EB /* models */,
 				639C48F31E8E4F010073E53D /* ViewController.h */,
 				639C48F41E8E4F010073E53D /* ViewController.m */,
 				639C48F61E8E4F010073E53D /* Main.storyboard */,
@@ -134,6 +138,15 @@
 				D3890AD71E8E96F70038E7EB /* ISRegVC.m */,
 			);
 			name = login;
+			sourceTree = "<group>";
+		};
+		D3890ADE1E8EA50F0038E7EB /* models */ = {
+			isa = PBXGroup;
+			children = (
+				D3890ADB1E8EA4EC0038E7EB /* ISUser.h */,
+				D3890ADC1E8EA4EC0038E7EB /* ISUser.m */,
+			);
+			path = models;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -217,6 +230,7 @@
 				639C48FB1E8E4F010073E53D /* hackatonFinal.xcdatamodeld in Sources */,
 				639C48F21E8E4F010073E53D /* AppDelegate.m in Sources */,
 				639C48EF1E8E4F010073E53D /* main.m in Sources */,
+				D3890ADD1E8EA4EC0038E7EB /* ISUser.m in Sources */,
 				D3890AD91E8E96F70038E7EB /* ISRegVC.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
