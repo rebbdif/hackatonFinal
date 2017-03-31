@@ -199,25 +199,14 @@ static const UInt8 kKeychainItemIdentifier[]    = "com.apple.dts.KeychainUI\0";
         
         UITabBarController* vc=[self.storyboard instantiateViewControllerWithIdentifier:@"tab"];
         vc.modalTransitionStyle=UIModalTransitionStyleFlipHorizontal;
-        [self presentViewController:vc animated:YES completion:nil];
-        
-        
-//        NSData * data =[chain find:key];
-//        if(data == nil)
-//        {
-//            NSLog(@"Keychain data not found");
-//        }
-//        else
-//        {
-//            NSLog(@"Data is =%@",[[NSString alloc] initWithData:data encoding:NSUTF8StringEncoding]);
-//        }
-        
-        
-    //    [chain mySetObject:hash forKey:kSecValueData];
-     //   [chain writeToKeychain];
-  //      CFStringRef aCFString = (__bridge CFStringRef)hash;
-    //    NSLog(@"rjlwejgo;ewj;w%@",[chain myObjectForKey:kSecValueData]);
-        
+        [self presentViewController:vc animated:YES completion:^{
+            
+            NSUserDefaults* userDefaults = [NSUserDefaults standardUserDefaults];
+            [userDefaults setObject:login forKey:@"login"];
+            [userDefaults synchronize];
+            
+            
+        }];
         
         
     }else

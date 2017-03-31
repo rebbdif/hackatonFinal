@@ -170,6 +170,32 @@
         if(data == nil)
         {
             NSLog(@"Keychain data not found");
+            
+            NSString* massage=@"Проверьте правильность ввода";
+            
+            
+            
+            UIAlertController * alert=   [UIAlertController
+                                          alertControllerWithTitle:@""
+                                          message:massage
+                                          preferredStyle:UIAlertControllerStyleAlert];
+            
+            UIAlertAction* ok = [UIAlertAction
+                                 actionWithTitle:@"OK"
+                                 style:UIAlertActionStyleDefault
+                                 handler:^(UIAlertAction * action)
+                                 {
+                                     [alert dismissViewControllerAnimated:YES completion:nil];
+                                     
+                                 }];
+            
+            [alert addAction:ok];
+            
+            [self presentViewController:alert animated:YES completion:nil];
+            
+            
+            
+            
          }
             else
          {
@@ -183,11 +209,40 @@
                
             UITabBarController* vc=[self.storyboard instantiateViewControllerWithIdentifier:@"tab"];
             vc.modalTransitionStyle=UIModalTransitionStyleFlipHorizontal;
-            [self presentViewController:vc animated:YES completion:nil];
+            [self presentViewController:vc animated:YES completion:^{
+                
+                NSUserDefaults* userDefaults = [NSUserDefaults standardUserDefaults];
+                [userDefaults setObject:login forKey:@"login"];
+                [userDefaults synchronize];
+                
+                
+                
+            }];
+                
+             }else{
+                 
+                 
+                 NSString* massage=@"неверный Логин или PIN";
                  
                  
                  
+                 UIAlertController * alert=   [UIAlertController
+                                               alertControllerWithTitle:@""
+                                               message:massage
+                                               preferredStyle:UIAlertControllerStyleAlert];
                  
+                 UIAlertAction* ok = [UIAlertAction
+                                      actionWithTitle:@"OK"
+                                      style:UIAlertActionStyleDefault
+                                      handler:^(UIAlertAction * action)
+                                      {
+                                          [alert dismissViewControllerAnimated:YES completion:nil];
+                                          
+                                      }];
+                 
+                 [alert addAction:ok];
+                 
+                 [self presentViewController:alert animated:YES completion:nil];
                  
                  
                  
@@ -228,9 +283,7 @@
     }
     
     
-    
-    
-    
-    
 }
+
+
 @end
