@@ -56,10 +56,7 @@
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="ogV-Nu-qMh">
-                                                    <rect key="frame" x="0.0" y="0.0" width="117" height="819"/>
-                                                    <constraints>
-                                                        <constraint firstAttribute="width" secondItem="ogV-Nu-qMh" secondAttribute="height" multiplier="1:7" id="QvT-Uv-7F5"/>
-                                                    </constraints>
+                                                    <rect key="frame" x="0.0" y="0.0" width="117" height="94.5"/>
                                                 </imageView>
                                             </subviews>
                                         </view>
@@ -71,6 +68,7 @@
                                             <constraint firstAttribute="trailing" secondItem="ogV-Nu-qMh" secondAttribute="trailing" id="WsR-qP-yN1"/>
                                             <constraint firstAttribute="trailing" secondItem="NaI-OY-yOs" secondAttribute="trailing" id="ceg-Fz-GL9"/>
                                             <constraint firstItem="ogV-Nu-qMh" firstAttribute="leading" secondItem="sia-2U-ROZ" secondAttribute="leading" id="fIA-Hg-m5f"/>
+                                            <constraint firstItem="1WB-61-vPm" firstAttribute="top" secondItem="ogV-Nu-qMh" secondAttribute="bottom" id="k4j-7j-YDH"/>
                                             <constraint firstItem="ogV-Nu-qMh" firstAttribute="top" secondItem="sia-2U-ROZ" secondAttribute="top" id="ovS-lQ-Ixl"/>
                                             <constraint firstItem="NaI-OY-yOs" firstAttribute="leading" secondItem="sia-2U-ROZ" secondAttribute="leading" id="r2d-mX-pOk"/>
                                             <constraint firstAttribute="trailing" secondItem="1WB-61-vPm" secondAttribute="trailing" id="s9s-nE-naR"/>

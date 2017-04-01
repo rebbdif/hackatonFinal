@@ -116,13 +116,18 @@
     [self dismissViewControllerAnimated:YES completion:^{
         
         NSUserDefaults* userDefaults = [NSUserDefaults standardUserDefaults];
-        NSNumber* number=[userDefaults objectForKey:@"idf"];
-        NSInteger i=number.integerValue+1;
+        //NSNumber* number=[userDefaults objectForKey:@"idf"];
+        
         NSString* login=[userDefaults objectForKey:@"login"];
         NSString* token=[[[UIDevice currentDevice]identifierForVendor] UUIDString];
         NSString* key=[NSString stringWithFormat:@"%@%@",login,token];
 
         Keychain* kch=[[Keychain alloc]initWithService:SERVICE_NAME withGroup:nil];
+        
+        NSData *idData = [kch find:[NSString stringWithFormat:@"idf%@",login]];
+        NSString *idSt = [[NSString alloc] initWithData:idData encoding:NSUTF8StringEncoding];
+        
+        NSInteger i=idSt.integerValue+1;
         NSData* passwordData = [kch find:key];
         NSString* password=[[NSString alloc]initWithData:passwordData encoding:NSUTF8StringEncoding];
         
@@ -132,9 +137,13 @@
         NSString* nkeyS=[NSString stringWithFormat:@"%@s",nKey];
         NSData* namePhoto=[self.photoName dataUsingEncoding:NSUTF8StringEncoding];
         [kch insert:nkeyS :namePhoto];
+        NSString *idf = [NSString stringWithFormat:@"%ld", i];
+        NSData *idfData = [idf dataUsingEncoding:NSUTF8StringEncoding];
+        NSString *keyId = [NSString stringWithFormat:@"idf%@",login];
+        [kch update:keyId :idfData];
         
-        [userDefaults setObject:@(i) forKey:@"idf"];
-        [userDefaults synchronize];
+        //[userDefaults setObject:@(i) forKey:@"idf"];
+        //[userDefaults synchronize];
         [self.cVc.collectionView reloadData];
         
         

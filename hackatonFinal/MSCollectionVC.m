@@ -56,7 +56,14 @@
         return 1;
     }
     else {
-    return [[[NSUserDefaults standardUserDefaults]objectForKey:@"idf"] integerValue];
+        Keychain *keyChain = [[Keychain alloc] initWithService:SERVICE_NAME withGroup:nil];
+        NSUserDefaults* userDefaults=[NSUserDefaults standardUserDefaults];
+        NSString* login=[userDefaults objectForKey:@"login"];
+        NSString* key = [NSString stringWithFormat:@"idf%@", login];
+        NSData *idfData = [keyChain find:key];
+        NSString *idf = [[NSString alloc] initWithData:idfData encoding:NSUTF8StringEncoding];
+        
+        return [idf integerValue];//[[[NSUserDefaults standardUserDefaults]objectForKey:@"idf"] integerValue];
     }
 }
 
@@ -68,7 +75,7 @@
     MSCollectionViewCell *cell = [collectionView dequeueReusableCellWithReuseIdentifier:identifier forIndexPath:indexPath];
     
     
-    if (indexPath.section ==0 ) {
+    if (indexPath.section ==0 && indexPath.row ==0) {
         
         
         UIColor *colour = [UIColor colorWithRed:0.f/256 green:204.f/256 blue:102.f/256 alpha:1.f];
@@ -76,6 +83,7 @@
         cell.label.text = @"Add";
         cell.img.backgroundColor = colour;
         cell.label.textColor = [UIColor whiteColor];
+        cell.photo.image =nil;
         return cell;
     }
     
