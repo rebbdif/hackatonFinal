@@ -29,6 +29,7 @@
     [super viewDidLoad];
     self.tableView.dataSource = self;
     self.tableView.delegate = self;
+    [self.tableView reloadData];
     [self setupModel];
     // Do any additional setup after loading the view.
 }
@@ -45,8 +46,8 @@
     NSUserDefaults* userDefaults=[NSUserDefaults standardUserDefaults];
     NSString* login=[userDefaults objectForKey:@"login"];
     NSString* key = [NSString stringWithFormat:@"idz%@", login];
-    NSData *idfData = [keyChain find:key];
-    NSString *idz = [[NSString alloc] initWithData:idfData encoding:NSUTF8StringEncoding];
+    NSData *idzData = [keyChain find:key];
+    NSString *idz = [[NSString alloc] initWithData:idzData encoding:NSUTF8StringEncoding];
     
     return [idz integerValue];
 }
@@ -84,7 +85,7 @@
         NSData* idzData = [keyChain find:keyID];
     NSString *idz = [[NSString alloc] initWithData:idzData encoding:NSUTF8StringEncoding];
         for (int i = 0; i<[idz integerValue]; i++) {
-            NSString *keyDict = [NSString stringWithFormat:@"%@%@%d",login,pass,i];
+            NSString *keyDict = [NSString stringWithFormat:@"%@%d%@",login,i,pass];
             NSData *dataDic = [keyChain find:keyDict];
             NSDictionary *myDictionary = (NSDictionary*) [NSKeyedUnarchiver unarchiveObjectWithData:dataDic];
             NSString *service = [myDictionary objectForKey:@"service"];

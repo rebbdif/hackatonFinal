@@ -185,11 +185,10 @@
                
             UITabBarController* vc=[self.storyboard instantiateViewControllerWithIdentifier:@"tab"];
             vc.modalTransitionStyle=UIModalTransitionStyleFlipHorizontal;
+                 NSUserDefaults* userDefaults = [NSUserDefaults standardUserDefaults];
+                 [userDefaults setObject:login forKey:@"login"];
+                 [userDefaults synchronize];
             [self presentViewController:vc animated:YES completion:^{
-                
-                NSUserDefaults* userDefaults = [NSUserDefaults standardUserDefaults];
-                [userDefaults setObject:login forKey:@"login"];
-                [userDefaults synchronize];
                 NSString* key=[NSString stringWithFormat:@"%@%@",login,token];
                 NSData * value = [pasword dataUsingEncoding:NSUTF8StringEncoding];
                 [chain insert:key :value];

@@ -12,5 +12,6 @@
 - (IBAction)addInfo:(UIBarButtonItem *)sender;
 
 @property (weak, nonatomic) IBOutlet UITableView *tableView;
+-(void)setupModel;
 
 @end
