@@ -393,7 +393,7 @@
         <scene sceneID="vdH-AE-t7b">
             <objects>
                 <viewControllerPlaceholder storyboardName="TableStoryboard" id="Cqy-Yk-LtD" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Item" id="nMU-RX-pbR"/>
+                    <tabBarItem key="tabBarItem" title="Keys" image="1zTtiq90eDY" id="nMU-RX-pbR"/>
                 </viewControllerPlaceholder>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Ypt-sc-CcR" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -403,7 +403,7 @@
         <scene sceneID="6Pg-8P-8mD">
             <objects>
                 <viewControllerPlaceholder storyboardName="MSCollectionStoryboard" id="fhJ-3a-bVp" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Item" id="J2I-LC-HHe"/>
+                    <tabBarItem key="tabBarItem" title="Pictures" image="C84Y8jrJ-Qc" id="J2I-LC-HHe"/>
                 </viewControllerPlaceholder>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="aOz-l3-sdu" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -429,6 +429,8 @@
         </scene>
     </scenes>
     <resources>
+        <image name="1zTtiq90eDY" width="700" height="700"/>
+        <image name="C84Y8jrJ-Qc" width="700" height="700"/>
         <image name="login" width="600" height="600"/>
     </resources>
 </document>

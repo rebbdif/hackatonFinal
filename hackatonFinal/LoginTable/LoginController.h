@@ -9,5 +9,8 @@
 #import <UIKit/UIKit.h>
 
 @interface LoginController : UIViewController
+- (IBAction)addInfo:(UIBarButtonItem *)sender;
+
+@property (weak, nonatomic) IBOutlet UITableView *tableView;
 
 @end

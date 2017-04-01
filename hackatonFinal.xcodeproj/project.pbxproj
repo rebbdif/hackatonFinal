@@ -30,6 +30,7 @@
 		D3890ADD1E8EA4EC0038E7EB /* ISUser.m in Sources */ = {isa = PBXBuildFile; fileRef = D3890ADC1E8EA4EC0038E7EB /* ISUser.m */; };
 		D3F5E36D1E8EC3F500DC9C5B /* KeychainWrapper.m in Sources */ = {isa = PBXBuildFile; fileRef = D3F5E36C1E8EC3F500DC9C5B /* KeychainWrapper.m */; };
 		D3F5E3711E8EDE6100DC9C5B /* Keychain.m in Sources */ = {isa = PBXBuildFile; fileRef = D3F5E3701E8EDE6100DC9C5B /* Keychain.m */; };
+		D3F5E3741E8F637500DC9C5B /* PassController.m in Sources */ = {isa = PBXBuildFile; fileRef = D3F5E3731E8F637500DC9C5B /* PassController.m */; };
 		F5878CEF1E8F03D400AA7D83 /* MSCollectionLayout.m in Sources */ = {isa = PBXBuildFile; fileRef = F5878CEB1E8F03D400AA7D83 /* MSCollectionLayout.m */; };
 		F5878CF01E8F03D400AA7D83 /* MSCollectionStoryboard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F5878CEC1E8F03D400AA7D83 /* MSCollectionStoryboard.storyboard */; };
 		F5878CF11E8F03D400AA7D83 /* MSCollectionVC.m in Sources */ = {isa = PBXBuildFile; fileRef = F5878CEE1E8F03D400AA7D83 /* MSCollectionVC.m */; };
@@ -78,6 +79,8 @@
 		D3F5E36C1E8EC3F500DC9C5B /* KeychainWrapper.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KeychainWrapper.m; sourceTree = "<group>"; };
 		D3F5E36F1E8EDE6100DC9C5B /* Keychain.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Keychain.h; sourceTree = "<group>"; };
 		D3F5E3701E8EDE6100DC9C5B /* Keychain.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Keychain.m; sourceTree = "<group>"; };
+		D3F5E3721E8F637500DC9C5B /* PassController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PassController.h; sourceTree = "<group>"; };
+		D3F5E3731E8F637500DC9C5B /* PassController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PassController.m; sourceTree = "<group>"; };
 		F5878CEA1E8F03D400AA7D83 /* MSCollectionLayout.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MSCollectionLayout.h; sourceTree = "<group>"; };
 		F5878CEB1E8F03D400AA7D83 /* MSCollectionLayout.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MSCollectionLayout.m; sourceTree = "<group>"; };
 		F5878CEC1E8F03D400AA7D83 /* MSCollectionStoryboard.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = MSCollectionStoryboard.storyboard; sourceTree = "<group>"; };
@@ -122,6 +125,8 @@
 				18ADE43A1E8EA18400F983E5 /* LoginCell.m */,
 				18ADE43C1E8EA3D300F983E5 /* LoginController.h */,
 				18ADE43D1E8EA3D300F983E5 /* LoginController.m */,
+				D3F5E3721E8F637500DC9C5B /* PassController.h */,
+				D3F5E3731E8F637500DC9C5B /* PassController.m */,
 			);
 			path = LoginTable;
 			sourceTree = "<group>";
@@ -277,7 +282,7 @@
 				TargetAttributes = {
 					639C48E91E8E4F000073E53D = {
 						CreatedOnToolsVersion = 8.2.1;
-						DevelopmentTeam = 2E7KMG8542;
+						DevelopmentTeam = HVBFE6784D;
 						ProvisioningStyle = Automatic;
 					};
 				};
@@ -342,6 +347,7 @@
 				639C48F21E8E4F010073E53D /* AppDelegate.m in Sources */,
 				639C48EF1E8E4F010073E53D /* main.m in Sources */,
 				D3890ADD1E8EA4EC0038E7EB /* ISUser.m in Sources */,
+				D3F5E3741E8F637500DC9C5B /* PassController.m in Sources */,
 				D3890AD91E8E96F70038E7EB /* ISRegVC.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -466,7 +472,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
-				DEVELOPMENT_TEAM = 2E7KMG8542;
+				DEVELOPMENT_TEAM = HVBFE6784D;
 				INFOPLIST_FILE = hackatonFinal/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = iosBaumanTeam.hackatonFinal;
@@ -480,7 +486,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
-				DEVELOPMENT_TEAM = 2E7KMG8542;
+				DEVELOPMENT_TEAM = HVBFE6784D;
 				INFOPLIST_FILE = hackatonFinal/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = iosBaumanTeam.hackatonFinal;

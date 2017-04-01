@@ -10,6 +10,7 @@
 #import "LoginCell.h"
 #import "LoginsModel.h"
 #import "Keychain.h"
+#import "PassController.h"
 
 #define GROUP_NAME @"YOUR_APP_ID.com.apps.shared"
 #define SERVICE_NAME @"ANY_NAME_FOR_YOU"
@@ -18,7 +19,7 @@
 {
     NSMutableArray *_modelArray;
 }
-@property (weak, nonatomic) IBOutlet UITableView *tableView;
+
 
 @end
 
@@ -39,7 +40,15 @@
 
 
 - (NSInteger)tableView:(UITableView *)tableViewMessege numberOfRowsInSection:(NSInteger)section {
-    return _modelArray.count;
+    
+    Keychain *keyChain = [[Keychain alloc] initWithService:SERVICE_NAME withGroup:nil];
+    NSUserDefaults* userDefaults=[NSUserDefaults standardUserDefaults];
+    NSString* login=[userDefaults objectForKey:@"login"];
+    NSString* key = [NSString stringWithFormat:@"idz%@", login];
+    NSData *idfData = [keyChain find:key];
+    NSString *idz = [[NSString alloc] initWithData:idfData encoding:NSUTF8StringEncoding];
+    
+    return [idz integerValue];
 }
 
 - (CGFloat)tableView:(UITableView *)tableViewMessege heightForRowAtIndexPath:(NSIndexPath *)indexPath {
@@ -68,12 +77,18 @@
         NSString* token=[[[UIDevice currentDevice]identifierForVendor] UUIDString];
         NSUserDefaults *userDeafults = [NSUserDefaults standardUserDefaults];
         NSString *login = [userDeafults objectForKey:@"login"];
-        NSInteger idz = [userDeafults objectForKey:@"idz"];
-        for (int i = 0; i<idz; i++) {
-            NSData *serviceData = [keyChain find:[NSString stringWithFormat:@"%@%@%ld", login, token, (long)idz]];
-            NSData *serLoginData = [keyChain find:[NSString stringWithFormat:@"%@%@%ld", login, token, (long)idz]];
-            NSString *service = [[NSString alloc]initWithData:serviceData encoding:NSUTF8StringEncoding];
-            NSString *serLogin = [[NSString alloc]initWithData:serLoginData encoding:NSUTF8StringEncoding];
+    NSString* keyID = [NSString stringWithFormat:@"idz%@", login];
+    NSString *keyPas = [NSString stringWithFormat:@"%@%@",login,token];
+    NSData *pasData = [keyChain find:keyPas];
+    NSString *pass = [[NSString alloc] initWithData:pasData encoding:NSUTF8StringEncoding];
+        NSData* idzData = [keyChain find:keyID];
+    NSString *idz = [[NSString alloc] initWithData:idzData encoding:NSUTF8StringEncoding];
+        for (int i = 0; i<[idz integerValue]; i++) {
+            NSString *keyDict = [NSString stringWithFormat:@"%@%@%d",login,pass,i];
+            NSData *dataDic = [keyChain find:keyDict];
+            NSDictionary *myDictionary = (NSDictionary*) [NSKeyedUnarchiver unarchiveObjectWithData:dataDic];
+            NSString *service = [myDictionary objectForKey:@"service"];
+            NSString *serLogin = [myDictionary objectForKey:@"login"];
             LoginsModel *model = [[LoginsModel alloc]initWithLogin:service login:serLogin];
             [_modelArray addObject:model];
         }
@@ -81,4 +96,14 @@
     [_tableView reloadData];
 }
 
+- (IBAction)addInfo:(UIBarButtonItem *)sender {
+    
+    UIStoryboard* sb=[UIStoryboard storyboardWithName:@"TableStoryboard" bundle:nil];
+    PassController* vc =[sb instantiateViewControllerWithIdentifier:@"inf"];
+    vc.lc=self;
+    [self presentViewController:vc animated:YES completion:nil];
+    
+    
+    
+}
 @end

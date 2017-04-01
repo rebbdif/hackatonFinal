@@ -21,29 +21,41 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="oSD-Wo-8Le">
-                                <rect key="frame" x="39" y="187" width="298" height="30"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="oSD-Wo-8Le">
+                                <rect key="frame" x="38.5" y="189" width="298" height="30"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="298" id="3tQ-JV-yXD"/>
+                                    <constraint firstAttribute="height" constant="30" id="CcM-Qq-OXC"/>
+                                </constraints>
                                 <state key="normal" title="Add Image"/>
                                 <connections>
                                     <action selector="addImagesButton:" destination="Jas-n2-ZPQ" eventType="touchUpInside" id="MGs-SB-FKn"/>
                                 </connections>
                             </button>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="pgQ-oF-Wmd">
-                                <rect key="frame" x="65" y="225" width="240" height="212"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="pgQ-oF-Wmd">
+                                <rect key="frame" x="67.5" y="227" width="240" height="212"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="240" id="FLh-7W-lrp"/>
+                                    <constraint firstAttribute="height" constant="212" id="XPL-2g-G81"/>
+                                </constraints>
                             </imageView>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="13p-d0-eRV">
-                                <rect key="frame" x="115" y="562" width="146" height="17"/>
+                            <stackView opaque="NO" contentMode="scaleToFill" fixedFrame="YES" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="VFl-rR-hoV">
+                                <rect key="frame" x="115" y="562" width="49" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </stackView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="13p-d0-eRV">
+                                <rect key="frame" x="163" y="549" width="49" height="30"/>
                                 <state key="normal" title="Submit"/>
                                 <connections>
                                     <action selector="submitButtonAction:" destination="Jas-n2-ZPQ" eventType="touchUpInside" id="spm-XE-gaQ"/>
                                 </connections>
                             </button>
-                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="FFP-fE-bru">
-                                <rect key="frame" x="78" y="133" width="219" height="30"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="FFP-fE-bru">
+                                <rect key="frame" x="78.5" y="132" width="219" height="30"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="30" id="DPW-76-ahV"/>
+                                    <constraint firstAttribute="width" constant="219" id="bIB-cd-Wpe"/>
+                                </constraints>
                                 <nil key="textColor"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits" autocapitalizationType="words" autocorrectionType="no" returnKeyType="done"/>
@@ -53,6 +65,16 @@
                             </textField>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="pgQ-oF-Wmd" firstAttribute="centerY" secondItem="ahM-Hm-SLE" secondAttribute="centerY" id="7Ip-xa-a7v"/>
+                            <constraint firstItem="13p-d0-eRV" firstAttribute="centerX" secondItem="pgQ-oF-Wmd" secondAttribute="centerX" id="LDg-Vs-DPa"/>
+                            <constraint firstItem="pgQ-oF-Wmd" firstAttribute="centerX" secondItem="oSD-Wo-8Le" secondAttribute="centerX" id="LKw-IR-oxc"/>
+                            <constraint firstItem="oSD-Wo-8Le" firstAttribute="centerX" secondItem="FFP-fE-bru" secondAttribute="centerX" id="M2O-D8-a1E"/>
+                            <constraint firstItem="oSD-Wo-8Le" firstAttribute="top" secondItem="FFP-fE-bru" secondAttribute="bottom" constant="27" id="PsX-lB-0SY"/>
+                            <constraint firstItem="13p-d0-eRV" firstAttribute="centerX" secondItem="ahM-Hm-SLE" secondAttribute="centerX" id="T4m-RR-ufj"/>
+                            <constraint firstItem="13p-d0-eRV" firstAttribute="top" secondItem="pgQ-oF-Wmd" secondAttribute="bottom" constant="110" id="W1N-Vg-jDo"/>
+                            <constraint firstItem="pgQ-oF-Wmd" firstAttribute="top" secondItem="oSD-Wo-8Le" secondAttribute="bottom" constant="8" id="vxw-bp-oN2"/>
+                        </constraints>
                     </view>
                     <connections>
                         <outlet property="addImageOutlet" destination="oSD-Wo-8Le" id="I0n-At-IJz"/>

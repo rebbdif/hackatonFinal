@@ -23,7 +23,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="67R-xf-zlI">
-                                <rect key="frame" x="0.0" y="64" width="375" height="603"/>
+                                <rect key="frame" x="0.0" y="64" width="375" height="554"/>
                                 <color key="backgroundColor" red="0.8855210110858619" green="0.89677189086294418" blue="0.85553165247046703" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="Fol-fS-3be">
                                     <size key="itemSize" width="117" height="111"/>
@@ -65,10 +65,10 @@
                                             <constraint firstItem="1WB-61-vPm" firstAttribute="leading" secondItem="sia-2U-ROZ" secondAttribute="leading" id="5gw-C5-pnN"/>
                                             <constraint firstAttribute="bottom" secondItem="1WB-61-vPm" secondAttribute="bottom" id="AWG-fo-s2S"/>
                                             <constraint firstAttribute="bottom" secondItem="NaI-OY-yOs" secondAttribute="bottom" id="FVe-9e-X5W"/>
+                                            <constraint firstItem="NaI-OY-yOs" firstAttribute="top" secondItem="ogV-Nu-qMh" secondAttribute="bottom" id="Kxz-7r-CcX"/>
                                             <constraint firstAttribute="trailing" secondItem="ogV-Nu-qMh" secondAttribute="trailing" id="WsR-qP-yN1"/>
                                             <constraint firstAttribute="trailing" secondItem="NaI-OY-yOs" secondAttribute="trailing" id="ceg-Fz-GL9"/>
                                             <constraint firstItem="ogV-Nu-qMh" firstAttribute="leading" secondItem="sia-2U-ROZ" secondAttribute="leading" id="fIA-Hg-m5f"/>
-                                            <constraint firstItem="1WB-61-vPm" firstAttribute="top" secondItem="ogV-Nu-qMh" secondAttribute="bottom" id="k4j-7j-YDH"/>
                                             <constraint firstItem="ogV-Nu-qMh" firstAttribute="top" secondItem="sia-2U-ROZ" secondAttribute="top" id="ovS-lQ-Ixl"/>
                                             <constraint firstItem="NaI-OY-yOs" firstAttribute="leading" secondItem="sia-2U-ROZ" secondAttribute="leading" id="r2d-mX-pOk"/>
                                             <constraint firstAttribute="trailing" secondItem="1WB-61-vPm" secondAttribute="trailing" id="s9s-nE-naR"/>
@@ -105,6 +105,8 @@
                             <constraint firstAttribute="trailing" secondItem="9X1-Yx-hLM" secondAttribute="trailing" id="u46-kN-61I"/>
                         </constraints>
                     </view>
+                    <tabBarItem key="tabBarItem" title="" systemItem="downloads" id="yCP-Tb-ygZ"/>
+                    <simulatedTabBarMetrics key="simulatedBottomBarMetrics"/>
                     <connections>
                         <outlet property="collectionView" destination="67R-xf-zlI" id="M8e-AQ-Jbp"/>
                         <outlet property="searchField" destination="9X1-Yx-hLM" id="Rsj-mC-bje"/>
