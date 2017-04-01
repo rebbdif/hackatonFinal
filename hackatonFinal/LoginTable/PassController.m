@@ -25,6 +25,12 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view.
+    
+    self.servText.delegate=self;
+    self.loginText.delegate=self;
+    self.pasText.delegate=self;
+    
+    
 }
 
 - (void)didReceiveMemoryWarning {
@@ -43,7 +49,7 @@
     NSString *idz = [NSString stringWithFormat:@"idz%@",login];
     NSData* dataID=[keyChain find:idz];
     NSString* idZs=[[NSString alloc]initWithData:dataID encoding:NSUTF8StringEncoding];
-    
+    NSLog(@"gjkh%@",idZs);
     NSString* service = self.servText.text;
     NSString* newLog = self.loginText.text;
     NSString* newPas = self.pasText.text;
@@ -55,9 +61,10 @@
     [keyChain update:idz :nidz];
     NSData* dataDic= [NSKeyedArchiver archivedDataWithRootObject:dic];
     [keyChain insert:keyN :dataDic];
-    [self.lc.tableView reloadData];
     
-    
+    [self dismissViewControllerAnimated:YES completion:^{
+        [self.lc.tableView reloadData];
+    }];
     
     
 }
@@ -71,5 +78,27 @@
     // Pass the selected object to the new view controller.
 }
 */
+- (BOOL)textFieldShouldReturn:(UITextField *)textField{
+    
+    if ([textField isEqual:self.servText]) {
+        
+        [self.loginText becomeFirstResponder];
+    } else {
+        
+        if ([textField isEqual:self.loginText]) {
+            
+             [self.pasText becomeFirstResponder];
+        }else
+            if ([textField isEqual:self.pasText]) {
+                
+                [textField resignFirstResponder];
+                
+            }}
+    
+    
+    return YES;
+}
+
+
 
 @end

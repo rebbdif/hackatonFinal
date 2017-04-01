@@ -276,7 +276,7 @@
                                         <rect key="frame" x="12" y="90" width="363" height="45"/>
                                         <nil key="textColor"/>
                                         <fontDescription key="fontDescription" name="PingFangTC-Light" family="PingFang TC" pointSize="18"/>
-                                        <textInputTraits key="textInputTraits" autocorrectionType="no"/>
+                                        <textInputTraits key="textInputTraits" autocorrectionType="no" secureTextEntry="YES"/>
                                         <connections>
                                             <outlet property="delegate" destination="ryS-3M-eEg" id="cwR-Sb-ZY7"/>
                                         </connections>
