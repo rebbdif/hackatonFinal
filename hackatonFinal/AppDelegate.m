@@ -17,6 +17,15 @@
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
     // Override point for customization after application launch.
+        NSUserDefaults * defs = [NSUserDefaults standardUserDefaults];
+        NSDictionary * dict = [defs dictionaryRepresentation];
+        for (id key in dict) {
+            [defs removeObjectForKey:key];
+        }
+        [defs synchronize];
+    
+    
+    
     return YES;
 }
 
