@@ -50,12 +50,15 @@
     NSDictionary* dic=[NSDictionary dictionaryWithObjectsAndKeys:service,@"service",
                       newLog,@"login",newPas,@"pin" ,nil];
     NSInteger i=[idZs integerValue];
-    NSString* keyN=[NSString stringWithFormat:@"%@%@%ld",login,pass,(long)i];
+    NSString* keyN=[NSString stringWithFormat:@"%@%ld%@",login,(long)i, pass];
     NSData *nidz=[[NSString stringWithFormat:@"%ld",i+1] dataUsingEncoding:NSUTF8StringEncoding];
     [keyChain update:idz :nidz];
     NSData* dataDic= [NSKeyedArchiver archivedDataWithRootObject:dic];
     [keyChain insert:keyN :dataDic];
-    [self.lc.tableView reloadData];
+    [self dismissViewControllerAnimated:YES completion:^{
+        [self.lc setupModel];
+    }];
+    
     
     
     

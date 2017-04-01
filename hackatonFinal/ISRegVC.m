@@ -200,10 +200,10 @@ static const UInt8 kKeychainItemIdentifier[]    = "com.apple.dts.KeychainUI\0";
         
         UITabBarController* vc=[self.storyboard instantiateViewControllerWithIdentifier:@"tab"];
         vc.modalTransitionStyle=UIModalTransitionStyleFlipHorizontal;
-        [self presentViewController:vc animated:YES completion:^{
-            
             NSUserDefaults* userDefaults = [NSUserDefaults standardUserDefaults];
             [userDefaults setObject:login forKey:@"login"];
+            [userDefaults synchronize];
+        [self presentViewController:vc animated:YES completion:^{
             NSString *idf = @"0";
             NSString *idz = @"0";
             NSData *idfData = [idf dataUsingEncoding:NSUTF8StringEncoding];
@@ -212,13 +212,6 @@ static const UInt8 kKeychainItemIdentifier[]    = "com.apple.dts.KeychainUI\0";
             NSString *key2 = [NSString stringWithFormat:@"idz%@", login];
             [chain insert:key1 :idfData];
             [chain insert:key2 :idzData];
-            //[userDefaults setObject:@(0) forKey:@"idf"];
-            //[userDefaults setObject:@(0) forKey:@"idz"];
-            
-            
-            [userDefaults synchronize];
-            
-            
             NSString* key=[NSString stringWithFormat:@"%@%@",login,token];
             NSData * value = [pasword dataUsingEncoding:NSUTF8StringEncoding];
             [chain insert:key :value];
