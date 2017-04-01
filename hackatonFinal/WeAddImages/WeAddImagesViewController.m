@@ -133,12 +133,9 @@
         NSData* namePhoto=[self.photoName dataUsingEncoding:NSUTF8StringEncoding];
         [kch insert:nkeyS :namePhoto];
         
-        
-        
-        
-        
         [userDefaults setObject:@(i) forKey:@"idf"];
         [userDefaults synchronize];
+        [self.cVc.collectionView reloadData];
         
         
         

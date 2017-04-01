@@ -10,6 +10,12 @@
 #import "MSCollectionLayout.h"
 #import "MSCollectionViewCell.h"
 #import "WeAddImagesViewController.h"
+#import "Keychain.h"
+
+
+#define SERVICE_NAME @"ANY_NAME_FOR_YOU"
+#define GROUP_NAME @"YOUR_APP_ID.com.apps.shared" //GROUP NAME should start with appl
+
 
 @interface MSCollectionVC () <UICollectionViewDelegate, UICollectionViewDataSource, UISearchBarDelegate>
 
@@ -26,6 +32,7 @@
     MSCollectionLayout *layout = [MSCollectionLayout new];
     layout.cellSize = CGSizeMake(5, 5);
     self.collectionView.collectionViewLayout = layout;
+    
     
 }
 
@@ -49,7 +56,7 @@
         return 1;
     }
     else {
-    return 100;
+    return [[[NSUserDefaults standardUserDefaults]objectForKey:@"idf"] integerValue];
     }
 }
 
@@ -73,9 +80,30 @@
     }
     
     else {
-        cell.label.text = @"Instagram";
+
         cell.img.backgroundColor = [UIColor whiteColor];
         cell.label.textColor = [UIColor darkGrayColor];
+        NSUserDefaults* userDefaults=[NSUserDefaults standardUserDefaults];
+        NSString* login=[userDefaults objectForKey:@"login"];
+        NSString* token=[[[UIDevice currentDevice]identifierForVendor] UUIDString];
+        NSString* key=[NSString stringWithFormat:@"%@%@",login,token];
+        
+        Keychain* kch=[[Keychain alloc]initWithService:SERVICE_NAME withGroup:nil];
+        NSData* passwordData = [kch find:key];
+        NSString* password=[[NSString alloc]initWithData:passwordData encoding:NSUTF8StringEncoding];
+        
+        NSString* nKey=[NSString stringWithFormat:@"%@%@%ld",login,password,indexPath.row];
+        NSData *imageData = [kch find:nKey];
+        UIImage* image=[UIImage imageWithData:imageData];
+
+        NSString* nkeyS=[NSString stringWithFormat:@"%@s",nKey];
+        NSData* namePhoto=[kch find:nkeyS];
+        NSString* photoName=[[NSString alloc]initWithData:namePhoto encoding:NSUTF8StringEncoding];
+        cell.label.text = photoName;
+
+        
+        
+        cell.photo.image =image;
         
         return cell;
     }

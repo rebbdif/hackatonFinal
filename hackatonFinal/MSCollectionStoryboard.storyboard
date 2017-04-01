@@ -55,6 +55,12 @@
                                                     <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
+                                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="ogV-Nu-qMh">
+                                                    <rect key="frame" x="0.0" y="0.0" width="117" height="819"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="width" secondItem="ogV-Nu-qMh" secondAttribute="height" multiplier="1:7" id="QvT-Uv-7F5"/>
+                                                    </constraints>
+                                                </imageView>
                                             </subviews>
                                         </view>
                                         <color key="backgroundColor" red="0.94509803920000002" green="0.27058823529999998" blue="0.27058823529999998" alpha="1" colorSpace="calibratedRGB"/>
@@ -62,13 +68,17 @@
                                             <constraint firstItem="1WB-61-vPm" firstAttribute="leading" secondItem="sia-2U-ROZ" secondAttribute="leading" id="5gw-C5-pnN"/>
                                             <constraint firstAttribute="bottom" secondItem="1WB-61-vPm" secondAttribute="bottom" id="AWG-fo-s2S"/>
                                             <constraint firstAttribute="bottom" secondItem="NaI-OY-yOs" secondAttribute="bottom" id="FVe-9e-X5W"/>
+                                            <constraint firstAttribute="trailing" secondItem="ogV-Nu-qMh" secondAttribute="trailing" id="WsR-qP-yN1"/>
                                             <constraint firstAttribute="trailing" secondItem="NaI-OY-yOs" secondAttribute="trailing" id="ceg-Fz-GL9"/>
+                                            <constraint firstItem="ogV-Nu-qMh" firstAttribute="leading" secondItem="sia-2U-ROZ" secondAttribute="leading" id="fIA-Hg-m5f"/>
+                                            <constraint firstItem="ogV-Nu-qMh" firstAttribute="top" secondItem="sia-2U-ROZ" secondAttribute="top" id="ovS-lQ-Ixl"/>
                                             <constraint firstItem="NaI-OY-yOs" firstAttribute="leading" secondItem="sia-2U-ROZ" secondAttribute="leading" id="r2d-mX-pOk"/>
                                             <constraint firstAttribute="trailing" secondItem="1WB-61-vPm" secondAttribute="trailing" id="s9s-nE-naR"/>
                                         </constraints>
                                         <connections>
                                             <outlet property="img" destination="NaI-OY-yOs" id="Yon-IW-byL"/>
                                             <outlet property="label" destination="1WB-61-vPm" id="ysB-Hb-Urj"/>
+                                            <outlet property="photo" destination="ogV-Nu-qMh" id="nPH-dY-kHE"/>
                                         </connections>
                                     </collectionViewCell>
                                 </cells>
