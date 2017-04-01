@@ -13,6 +13,7 @@
 		18ADE4381E8E9C5E00F983E5 /* SearchCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 18ADE4371E8E9C5E00F983E5 /* SearchCell.m */; };
 		18ADE43B1E8EA18400F983E5 /* LoginCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 18ADE43A1E8EA18400F983E5 /* LoginCell.m */; };
 		18ADE43E1E8EA3D300F983E5 /* LoginController.m in Sources */ = {isa = PBXBuildFile; fileRef = 18ADE43D1E8EA3D300F983E5 /* LoginController.m */; };
+		18DCA0781E8F2F3C003CA7B8 /* PasswdController.m in Sources */ = {isa = PBXBuildFile; fileRef = 18DCA0771E8F2F3C003CA7B8 /* PasswdController.m */; };
 		639C48EF1E8E4F010073E53D /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 639C48EE1E8E4F010073E53D /* main.m */; };
 		639C48F21E8E4F010073E53D /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 639C48F11E8E4F010073E53D /* AppDelegate.m */; };
 		639C48F51E8E4F010073E53D /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 639C48F41E8E4F010073E53D /* ViewController.m */; };
@@ -50,6 +51,8 @@
 		18ADE43A1E8EA18400F983E5 /* LoginCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LoginCell.m; sourceTree = "<group>"; };
 		18ADE43C1E8EA3D300F983E5 /* LoginController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LoginController.h; sourceTree = "<group>"; };
 		18ADE43D1E8EA3D300F983E5 /* LoginController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LoginController.m; sourceTree = "<group>"; };
+		18DCA0761E8F2F3C003CA7B8 /* PasswdController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PasswdController.h; sourceTree = "<group>"; };
+		18DCA0771E8F2F3C003CA7B8 /* PasswdController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PasswdController.m; sourceTree = "<group>"; };
 		639C48EA1E8E4F010073E53D /* hackatonFinal.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = hackatonFinal.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		639C48EE1E8E4F010073E53D /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		639C48F01E8E4F010073E53D /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
@@ -122,6 +125,8 @@
 				18ADE43A1E8EA18400F983E5 /* LoginCell.m */,
 				18ADE43C1E8EA3D300F983E5 /* LoginController.h */,
 				18ADE43D1E8EA3D300F983E5 /* LoginController.m */,
+				18DCA0761E8F2F3C003CA7B8 /* PasswdController.h */,
+				18DCA0771E8F2F3C003CA7B8 /* PasswdController.m */,
 			);
 			path = LoginTable;
 			sourceTree = "<group>";
@@ -324,6 +329,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				639C49091E8E7F9C0073E53D /* MyTouchModel.m in Sources */,
+				18DCA0781E8F2F3C003CA7B8 /* PasswdController.m in Sources */,
 				D3F5E3711E8EDE6100DC9C5B /* Keychain.m in Sources */,
 				F5878CEF1E8F03D400AA7D83 /* MSCollectionLayout.m in Sources */,
 				18ADE43E1E8EA3D300F983E5 /* LoginController.m in Sources */,
