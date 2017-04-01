@@ -50,7 +50,7 @@
     }
 }
 
-// The cell that is returned must be retrieved from a call to -dequeueReusableCellWithReuseIdentifier:forIndexPath:
+
 - (UICollectionViewCell *)collectionView:(UICollectionView *)collectionView cellForItemAtIndexPath:(NSIndexPath *)indexPath {
     
     static NSString *identifier = @"Cell";
@@ -58,32 +58,32 @@
     MSCollectionViewCell *cell = [collectionView dequeueReusableCellWithReuseIdentifier:identifier forIndexPath:indexPath];
     
     
-    if (indexPath.section ==0) {
-        /*
-        UILabel *titleLabel = (UILabel *)[cell viewWithTag:100];
+    if (indexPath.section ==0 ) {
         
-        UIImageView *view = (UIImageView*)[cell viewWithTag:101];
-        
-        view.backgroundColor = [UIColor greenColor];
-        
-        titleLabel.backgroundColor = [UIColor whiteColor];
-        
-        [titleLabel  setText:@"Add"];
-         
-         */
         
         UIColor *colour = [UIColor colorWithRed:0.f/256 green:204.f/256 blue:102.f/256 alpha:1.f];
         
         cell.label.text = @"Add";
         cell.img.backgroundColor = colour;
         cell.label.textColor = [UIColor whiteColor];
+        return cell;
+    }
+    
+    else {
+        cell.label.text = @"Instagram";
+        cell.img.backgroundColor = [UIColor whiteColor];
+        cell.label.textColor = [UIColor darkGrayColor];
         
+        return cell;
     }
     
     
-    return cell;
+    
+    
     
 }
+
+
 
 
 #pragma mark - UICollectionViewDelegate

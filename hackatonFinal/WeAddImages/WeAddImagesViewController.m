@@ -7,8 +7,10 @@
 //
 
 #import "WeAddImagesViewController.h"
+#import "MSCollectionVC.h"
 
-@interface WeAddImagesViewController ()<UIImagePickerControllerDelegate, UINavigationControllerDelegate>
+
+@interface WeAddImagesViewController ()<UIImagePickerControllerDelegate, UINavigationControllerDelegate ,UITextFieldDelegate>
 - (IBAction)addImagesButton:(UIButton *)sender;
 @property (weak, nonatomic) IBOutlet UIImageView *chosenImage;
 @property (weak, nonatomic) IBOutlet UITextField *imageDescriptionText;
@@ -23,12 +25,13 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-}
-
--(void)viewWillAppear:(BOOL)animated{
     _chosenImage.hidden=YES;
     _imageDescriptionText.hidden=YES;
     _submitButtonOutlet.hidden=YES;
+}
+
+-(void)viewWillAppear:(BOOL)animated{
+    
 }
 
 
@@ -57,17 +60,15 @@
     [picker dismissViewControllerAnimated:YES completion:^{
         dispatch_async(dispatch_get_main_queue(), ^{
             _chosenImage.hidden=NO;
-            _imageDescriptionText.hidden=NO;
+            // _imageDescriptionText.hidden=NO;
             _addImageOutlet.titleLabel.text=@"change image";
             _submitButtonOutlet.hidden=NO;
             
             UIAlertController* alert = [UIAlertController alertControllerWithTitle:@"Введите название" message:
                                         @"Введите название фото" preferredStyle:UIAlertControllerStyleAlert];
-            
-            [alert addTextFieldWithConfigurationHandler:^(UITextField * _Nonnull textField) {
+            [alert addTextFieldWithConfigurationHandler:^(UITextField *textField) {
                 textField.placeholder = @"название фото";
             }];
-            
             UIAlertAction* defaultAction = [UIAlertAction actionWithTitle:@"OK" style:UIAlertActionStyleDefault
                                                                   handler:^(UIAlertAction * action) {
                                                                       _photoName= alert.textFields[0].text;
@@ -81,11 +82,17 @@
                                                                           _photoName=  [@"photo" stringByAppendingString: prettyDate];
                                                                       }
                                                                       
+                                                                      
+                                                                      
+                                                                      dispatch_async(dispatch_get_main_queue(),^{
+                                                                          self.imageDescriptionText.hidden=NO;
+                                                                          self.imageDescriptionText.text=_photoName;
+                                                                      });
                                                                   }];
             
             [alert addAction:defaultAction];
             [self presentViewController:alert animated:YES completion:^{
-                self.imageDescriptionText.text=_photoName;
+                
             }];
             
             
@@ -99,7 +106,19 @@
 
 - (IBAction)submitButtonAction:(id)sender {
     
-    //adding photo
-    //back to max's vc
+    [self dismissViewControllerAnimated:YES completion:nil];
+    
 }
+
+
+#pragma mark - UITextFieldDelegate
+
+- (BOOL)textFieldShouldReturn:(UITextField *)textField{
+    
+    
+    [textField resignFirstResponder];
+    
+    return YES;
+}
+
 @end

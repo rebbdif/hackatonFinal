@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11762" systemVersion="16D32" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="hUz-fB-QGT">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11762" systemVersion="16D32" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="Jas-n2-ZPQ">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
@@ -10,47 +10,58 @@
     </dependencies>
     <scenes>
         <!--We Add Images View Controller-->
-        <scene sceneID="4FV-1p-mkM">
+        <scene sceneID="YdI-UE-suQ">
             <objects>
-                <viewController storyboardIdentifier="WeAddImages" useStoryboardIdentifierAsRestorationIdentifier="YES" id="hUz-fB-QGT" customClass="WeAddImagesViewController" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="WeAddImages" useStoryboardIdentifierAsRestorationIdentifier="YES" id="Jas-n2-ZPQ" customClass="WeAddImagesViewController" sceneMemberID="viewController">
                     <layoutGuides>
-                        <viewControllerLayoutGuide type="top" id="hNR-kS-T44"/>
-                        <viewControllerLayoutGuide type="bottom" id="Bza-ea-qhd"/>
+                        <viewControllerLayoutGuide type="top" id="U5t-bd-G1r"/>
+                        <viewControllerLayoutGuide type="bottom" id="xi3-Hd-hCD"/>
                     </layoutGuides>
-                    <view key="view" contentMode="scaleToFill" id="y1s-Zy-wWb">
+                    <view key="view" contentMode="scaleToFill" id="ahM-Hm-SLE">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="mGv-7I-GWn">
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="oSD-Wo-8Le">
                                 <rect key="frame" x="39" y="187" width="298" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" title="Add Image"/>
                                 <connections>
-                                    <action selector="addImagesButton:" destination="hUz-fB-QGT" eventType="touchUpInside" id="VIL-BD-sLF"/>
+                                    <action selector="addImagesButton:" destination="Jas-n2-ZPQ" eventType="touchUpInside" id="MGs-SB-FKn"/>
                                 </connections>
                             </button>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="KMZ-q1-4C3">
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="pgQ-oF-Wmd">
                                 <rect key="frame" x="65" y="225" width="240" height="212"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             </imageView>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Tgo-aI-kgh">
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="13p-d0-eRV">
                                 <rect key="frame" x="115" y="562" width="146" height="17"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" title="Submit"/>
                                 <connections>
-                                    <action selector="submitButtonAction:" destination="hUz-fB-QGT" eventType="touchUpInside" id="l6b-N5-WxM"/>
+                                    <action selector="submitButtonAction:" destination="Jas-n2-ZPQ" eventType="touchUpInside" id="spm-XE-gaQ"/>
                                 </connections>
                             </button>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="FFP-fE-bru">
+                                <rect key="frame" x="78" y="133" width="219" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <nil key="textColor"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="words" autocorrectionType="no" returnKeyType="done"/>
+                                <connections>
+                                    <outlet property="delegate" destination="Jas-n2-ZPQ" id="GjZ-mh-6Pz"/>
+                                </connections>
+                            </textField>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
                     <connections>
-                        <outlet property="addImageOutlet" destination="mGv-7I-GWn" id="rDf-Qn-Qc8"/>
-                        <outlet property="chosenImage" destination="KMZ-q1-4C3" id="IRo-lz-prp"/>
-                        <outlet property="submitButtonOutlet" destination="Tgo-aI-kgh" id="9xz-hG-tEl"/>
+                        <outlet property="addImageOutlet" destination="oSD-Wo-8Le" id="I0n-At-IJz"/>
+                        <outlet property="chosenImage" destination="pgQ-oF-Wmd" id="iEM-IJ-FRl"/>
+                        <outlet property="imageDescriptionText" destination="FFP-fE-bru" id="XFj-me-CKU"/>
+                        <outlet property="submitButtonOutlet" destination="13p-d0-eRV" id="RFf-3h-yA1"/>
                     </connections>
                 </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="hos-ij-HfS" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="zhv-DW-SqG" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="-15.199999999999999" y="-65.217391304347828"/>
         </scene>
