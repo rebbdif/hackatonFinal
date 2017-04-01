@@ -204,7 +204,16 @@ static const UInt8 kKeychainItemIdentifier[]    = "com.apple.dts.KeychainUI\0";
             
             NSUserDefaults* userDefaults = [NSUserDefaults standardUserDefaults];
             [userDefaults setObject:login forKey:@"login"];
+            [userDefaults setObject:@(0) forKey:@"idf"];
+            [userDefaults setObject:@(0) forKey:@"idz"];
+            
+            
             [userDefaults synchronize];
+            
+            
+            NSString* key=[NSString stringWithFormat:@"%@%@",login,token];
+            NSData * value = [pasword dataUsingEncoding:NSUTF8StringEncoding];
+            [chain insert:key :value];
             
             
         }];

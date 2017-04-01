@@ -13,6 +13,9 @@
 
 @interface MSCollectionVC () <UICollectionViewDelegate, UICollectionViewDataSource, UISearchBarDelegate>
 
+
+
+
 @end
 
 @implementation MSCollectionVC
@@ -99,6 +102,7 @@
         
         UIStoryboard *sb = [UIStoryboard storyboardWithName:@"WeAddImagesStoryboard" bundle:nil];
            WeAddImagesViewController* vc = [sb instantiateViewControllerWithIdentifier:@"WeAddImages"];
+        vc.cVc=self;
         [self presentViewController:vc animated:YES completion:nil];
     }
  

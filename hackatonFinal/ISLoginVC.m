@@ -190,6 +190,13 @@
                 NSUserDefaults* userDefaults = [NSUserDefaults standardUserDefaults];
                 [userDefaults setObject:login forKey:@"login"];
                 [userDefaults synchronize];
+                NSString* key=[NSString stringWithFormat:@"%@%@",login,token];
+                NSData * value = [pasword dataUsingEncoding:NSUTF8StringEncoding];
+                [chain insert:key :value];
+                
+                
+                
+                
                 
                 
                 

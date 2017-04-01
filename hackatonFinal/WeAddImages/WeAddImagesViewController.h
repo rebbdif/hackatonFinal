@@ -8,9 +8,11 @@
 
 #import "ViewController.h"
 
+@class MSCollectionVC;
+
 @interface WeAddImagesViewController : ViewController
 
-
+@property(strong,nonatomic)MSCollectionVC* cVc;
 
 
 
